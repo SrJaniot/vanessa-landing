@@ -90,7 +90,7 @@
       },
       "video": {
         "estado": "lee",
-        "texto": "Aquí está el recorrido en video."
+        "texto": "¡Mírame en video! Te presento Vanessa en un minuto."
       },
       "comparativa": {
         "estado": "piensa",
@@ -603,10 +603,23 @@
   },
   "video": {
     "etiqueta": "En video",
-    "titulo": "Mira el recorrido completo",
-    "archivo": "capturas/recorrido.mp4",
-    "poster": "capturas/recorrido-poster.jpg",
-    "descripcion": "Video del recorrido por la plataforma"
+    "titulo": "Pardo te presenta Vanessa",
+    "videos": [
+      {
+        "nombre": "Pardo te la presenta",
+        "archivo": "capturas/pardo-presenta.mp4",
+        "poster": "capturas/pardo-presenta-poster.jpg",
+        "archivoVertical": "capturas/pardo-presenta-vertical.mp4",
+        "posterVertical": "capturas/pardo-presenta-vertical-poster.jpg",
+        "descripcion": "Video animado: Pardo presenta Vanessa, la plataforma escolar"
+      },
+      {
+        "nombre": "Recorrido por la plataforma",
+        "archivo": "capturas/recorrido.mp4",
+        "poster": "capturas/recorrido-poster.jpg",
+        "descripcion": "Video del recorrido por la plataforma"
+      }
+    ]
   },
   "comparativa": {
     "etiqueta": "Comparativa",

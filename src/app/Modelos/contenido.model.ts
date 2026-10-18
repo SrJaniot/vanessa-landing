@@ -81,7 +81,10 @@ export interface Contenido {
     alerta: { titulo: string; estudiante: string; motivo: string; estados: string[]; acciones: string[]; notas: string[] };
     whatsapp: { titulo: string; contacto: string; estadoContacto: string; escribiendo: string; hora: string; mensaje: string; otraVez: string; nota: string };
   };
-  video: { etiqueta: string; titulo: string; archivo: string; poster: string; descripcion: string };
+  video: {
+    etiqueta: string; titulo: string;
+    videos: { nombre: string; archivo: string; poster?: string; archivoVertical?: string; posterVertical?: string; descripcion: string }[];
+  };
   comparativa: {
     etiqueta: string; titulo: string; texto: string; caracteristica: string; columnas: string[];
     leyenda: Record<ValorComparativa, string>; nota: string; deslizar: string;
