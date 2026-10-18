@@ -1,0 +1,80 @@
+/* ESTILOS DEL VIDEO. COLORES Y FUENTES DE LA LANDING (src/styles.scss): Fredoka EN TITULOS Y Nunito EN TEXTOS */
+@font-face { font-family: 'Fredoka'; font-weight: 300 700; src: url(fuentes/fredoka-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-weight: 200 1000; src: url(fuentes/nunito-latin.woff2) format('woff2'); }
+:root {
+  --tinta: #1F2A44; --sello: #1B66C9; --sello-suave: #E6F0FD; --papel: #FFF8EC; --hoja: #FFFFFF; --grafito: #5A6480; --linea: #EADFC9;
+  --azul: #2F7FE0; --amarillo: #FFC531; --verde: #2FAE6B; --coral: #FF6F59; --morado: #8B6CEF;
+  --azul-s: #E6F0FD; --amarillo-s: #FFF3CC; --verde-s: #DFF5E8; --coral-s: #FFE6E1; --morado-s: #EEE9FD;
+  --azul-f: #1B66C9; --amarillo-f: #8A5A00; --verde-f: #1B7A4A; --coral-f: #B8432F; --morado-f: #6B4FD8;
+  --patron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%231F2A44' stroke-opacity='.055' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='rotate(-35 58 46)'%3E%3Crect x='24' y='40' width='56' height='13' rx='3'/%3E%3Cpath d='M80 40 L96 46.5 L80 53 M34 40 V53 M90 44.3 L96 46.5 L90 48.7'/%3E%3C/g%3E%3Cpath d='M196 60 Q212 51 232 55 V86 Q212 82 196 91 Q180 82 160 86 V55 Q180 51 196 60 Z M196 60 V91'/%3E%3Cg transform='rotate(-10 90 236)'%3E%3Crect x='36' y='226' width='108' height='20' rx='4'/%3E%3Cpath d='M48 226 v8 M60 226 v5 M72 226 v8 M84 226 v5 M96 226 v8 M108 226 v5 M120 226 v8 M132 226 v5'/%3E%3C/g%3E%3Cpath d='M256 140 l5.5 11.2 12.3 1.8 -8.9 8.7 2.1 12.3 -11-5.8 -11 5.8 2.1-12.3 -8.9-8.7 12.3-1.8 Z'/%3E%3Cpath d='M140 138 C130 129 113 134 115 152 C117 170 131 176 140 169 C149 176 163 170 165 152 C167 134 150 129 140 138 Z M140 138 Q140 129 146 123 M141 133 Q149 124 158 128 Q149 135 141 133 Z'/%3E%3Ccircle cx='240' cy='238' r='19'/%3E%3Cellipse cx='240' cy='238' rx='8' ry='19'/%3E%3Cpath d='M221 238 H259 M224 228 H256 M224 248 H256 M214 226 Q206 252 230 263 M240 257 V272 M228 274 H252'/%3E%3Ccircle cx='112' cy='26' r='2.5'/%3E%3Ccircle cx='278' cy='100' r='2.5'/%3E%3Ccircle cx='18' cy='150' r='2.5'/%3E%3Ccircle cx='186' cy='282' r='2.5'/%3E%3C/g%3E%3Cg fill='%231F2A44' fill-opacity='.055' font-family='Arial Rounded MT Bold, Nunito, sans-serif' font-weight='700'%3E%3Ctext x='26' y='132' font-size='24'%3Ea b c%3C/text%3E%3Ctext x='182' y='202' font-size='24'%3E1+2%3C/text%3E%3C/g%3E%3C/svg%3E");
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--papel); }
+body { font-family: 'Nunito', sans-serif; color: var(--tinta); -webkit-font-smoothing: antialiased; }
+#escenario { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--papel); }
+#fondo { position: absolute; inset: -200px; background-color: var(--papel); background-image: var(--patron); background-size: 300px 300px; }
+#escenas, #capa-globos, #capa-efectos, #capa-transicion, #capa-pardo { position: absolute; inset: 0; }
+.escena { position: absolute; inset: 0; visibility: hidden; }
+.abs { position: absolute; }
+.titulo { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--tinta); line-height: 1.05; letter-spacing: -.5px; }
+.texto { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--grafito); }
+.pildora { position: absolute; display: inline-flex; align-items: center; gap: 12px; padding: 10px 24px 10px 12px; border-radius: 999px; font-family: 'Fredoka'; font-weight: 600; font-size: 30px; background: var(--hoja); border: 3px solid var(--linea); box-shadow: 0 10px 24px -16px rgb(31 42 68 / .45); }
+.pildora i { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; color: #fff; font-style: normal; }
+.palabra { display: inline-block; white-space: nowrap; }
+.letra { display: inline-block; }
+
+/* PARDO */
+#capa-pardo { pointer-events: none; }
+#pardo-pos { position: absolute; left: 0; top: 0; width: 300px; height: 330px; transform-origin: 50% 100%; }
+#pardo-salto, #pardo-squash, #pardo-respira { position: absolute; inset: 0; transform-origin: 50% 96%; }
+#pardo-respira svg { width: 300px; height: 330px; overflow: visible; }
+.sombra-pardo { position: absolute; left: 70px; top: 312px; width: 160px; height: 26px; border-radius: 50%; background: rgb(31 42 68 / .16); }
+
+/* GLOBOS DE TEXTO */
+.globo { position: absolute; max-width: 620px; padding: 26px 34px; background: #fff; border: 4px solid var(--tinta); border-radius: 34px; font-family: 'Fredoka'; font-weight: 500; font-size: 40px; line-height: 1.2; color: var(--tinta); box-shadow: 0 16px 0 -6px rgb(31 42 68 / .12); transform-origin: var(--ox, 50%) var(--oy, 100%); }
+.globo::after, .globo::before { content: ''; position: absolute; width: 0; height: 0; border-style: solid; }
+.globo.cola-abajo::before { left: var(--cx, 80px); bottom: -34px; border-width: 34px 18px 0 18px; border-color: var(--tinta) transparent transparent transparent; }
+.globo.cola-abajo::after { left: calc(var(--cx, 80px) + 6px); bottom: -24px; border-width: 26px 12px 0 12px; border-color: #fff transparent transparent transparent; }
+.globo.cola-abajo-der::before { right: 70px; bottom: -34px; border-width: 34px 0 0 34px; border-color: var(--tinta) transparent transparent transparent; }
+.globo.cola-abajo-der::after { right: 74px; bottom: -24px; border-width: 26px 0 0 26px; border-color: #fff transparent transparent transparent; }
+.globo.cola-abajo-izq::before { left: 70px; bottom: -34px; border-width: 34px 34px 0 0; border-color: var(--tinta) transparent transparent transparent; }
+.globo.cola-abajo-izq::after { left: 74px; bottom: -24px; border-width: 26px 26px 0 0; border-color: #fff transparent transparent transparent; }
+.globo.cola-der::before { right: -34px; bottom: 40px; border-width: 0 0 34px 34px; border-color: transparent transparent transparent var(--tinta); }
+.globo.cola-der::after { right: -23px; bottom: 45px; border-width: 0 0 25px 25px; border-color: transparent transparent transparent #fff; }
+.globo.cola-izq::before { left: -34px; bottom: 40px; border-width: 0 34px 34px 0; border-color: transparent var(--tinta) transparent transparent; }
+.globo.cola-izq::after { left: -23px; bottom: 45px; border-width: 0 25px 25px 0; border-color: transparent #fff transparent transparent; }
+.globo b { color: var(--sello); font-weight: 600; }
+
+/* CURSOR */
+#cursor { position: absolute; left: 0; top: 0; width: 54px; height: 64px; filter: drop-shadow(0 6px 6px rgb(0 0 0 / .25)); opacity: 0; transform-origin: 8px 6px; z-index: 5; }
+.onda { position: absolute; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; border: 6px solid var(--azul); opacity: 0; }
+
+/* DISPOSITIVOS */
+.portatil { position: absolute; }
+.portatil .marco { position: absolute; inset: 0; background: #1F2A44; border-radius: 30px; box-shadow: 0 40px 60px -30px rgb(31 42 68 / .55); }
+.portatil .camara-web { position: absolute; left: 50%; top: 9px; width: 9px; height: 9px; margin-left: -4px; border-radius: 50%; background: #3A4767; }
+.portatil .teclado { position: absolute; left: -70px; right: -70px; bottom: -34px; height: 36px; background: linear-gradient(#D9DEE8, #AEB6CA); border-radius: 4px 4px 26px 26px; box-shadow: 0 24px 40px -20px rgb(31 42 68 / .6); }
+.portatil .teclado::before { content: ''; position: absolute; left: 50%; top: 0; width: 200px; margin-left: -100px; height: 12px; background: #C3C9D6; border-radius: 0 0 14px 14px; }
+.pantalla { position: absolute; overflow: hidden; background: #FFF8EC; }
+.portatil .pantalla { left: 22px; top: 24px; right: 22px; bottom: 22px; border-radius: 10px; }
+.celular { position: absolute; }
+.celular .marco { position: absolute; inset: 0; background: #1F2A44; border-radius: 64px; box-shadow: 0 40px 60px -30px rgb(31 42 68 / .55); }
+.celular .pantalla { left: 16px; top: 16px; right: 16px; bottom: 16px; border-radius: 50px; }
+.celular .isla { position: absolute; left: 50%; top: 30px; width: 110px; height: 30px; margin-left: -55px; background: #1F2A44; border-radius: 20px; z-index: 3; }
+.cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.cam img { position: absolute; left: 0; top: 0; display: block; }
+.cam .nitida { clip-path: inset(0px 0px 0px 0px round 0px); }
+.resalte { position: absolute; border: 8px solid var(--coral); border-radius: 22px; opacity: 0; box-shadow: 0 0 0 9999px rgb(0 0 0 / 0); }
+
+/* TARJETAS */
+.tarjeta { position: absolute; background: #fff; border: 3px solid var(--linea); border-radius: 28px; box-shadow: 0 18px 40px -26px rgb(31 42 68 / .5); }
+.recorte { position: absolute; background-repeat: no-repeat; border-radius: 22px; box-shadow: 0 22px 44px -24px rgb(31 42 68 / .55); }
+.fuente { font-family: 'Nunito'; font-weight: 700; font-size: 21px; color: var(--grafito); }
+.nota-demo { position: absolute; font-family: 'Nunito'; font-weight: 700; font-size: 20px; color: var(--grafito); background: rgb(255 255 255 / .85); padding: 6px 14px; border-radius: 999px; border: 2px solid var(--linea); }
+
+/* FORMATO VERTICAL PARA CELULAR (1080 x 1920, ?formato=vertical): SOLO CAMBIA EL TAMAÑO DEL ESCENARIO Y AGRANDA LOS TEXTOS PEQUEÑOS */
+html.vertical, html.vertical body, html.vertical #escenario { width: 1080px; height: 1920px; }
+html.vertical .pildora { font-size: 36px; padding: 10px 28px 10px 12px; }
+html.vertical .pildora i { width: 54px; height: 54px; }
+html.vertical .fuente { font-size: 25px; }
+html.vertical .nota-demo { font-size: 25px; }

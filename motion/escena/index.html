@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Pardo presenta Vanessa</title>
+<script>/* FORMATO VERTICAL PARA CELULAR (1080 x 1920): index.html?formato=vertical */ if (new URLSearchParams(location.search).get('formato') === 'vertical') document.documentElement.classList.add('vertical');</script>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- ESCENARIO DE 1920 x 1080. TODO SE ANIMA CON UNA SOLA LINEA DE TIEMPO DE GSAP (guion.js) QUE SE MUEVE CON window.__seek(t) -->
+<div id="escenario">
+  <div id="fondo"></div>
+  <div id="escenas"></div>
+  <div id="capa-pardo"><div id="pardo-pos"><div id="pardo-salto"><div id="pardo-squash"><div id="pardo-respira"></div></div></div></div></div>
+  <div id="capa-globos"></div>
+  <div id="capa-efectos"></div>
+  <div id="cursor"><svg viewBox="0 0 40 48" width="54" height="64"><path d="M4 3 L4 38 L13 30 L19 44 L26 41 L20 28 L32 28 Z" fill="#fff" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/></svg></div>
+  <div id="capa-transicion"></div>
+</div>
+<script src="vendor/gsap.min.js"></script>
+<script src="pardo.js"></script>
+<script src="guion.js"></script>
+</body>
+</html>
