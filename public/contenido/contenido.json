@@ -299,7 +299,7 @@
         "id": "estudiante",
         "nombre": "Estudiante",
         "pardo": "celebra",
-        "globo": "¡Así ve Sofía de 6A su curso de Matemáticas!",
+        "globo": "¡Así ve Valentina, de 6A, su progreso!",
         "titulo": "Una interfaz pensada para niños",
         "puntos": [
           "Camino de temas con estrellas: Fracciones, Decimales, Proporciones…",
@@ -309,7 +309,7 @@
           "Entra con su número de documento: no necesita correo."
         ],
         "captura": "capturas/rol-estudiante.png",
-        "alt": "Camino de temas del curso de Matemáticas de 6A"
+        "alt": "«Mi progreso» de Valentina, de 6A: racha, avance y recordatorios de Pardo"
       },
       {
         "id": "profesor",
@@ -325,7 +325,7 @@
           "Estadísticas de sus grupos: avance, notas y preguntas más falladas."
         ],
         "captura": "capturas/rol-profesor.png",
-        "alt": "Bandeja Por calificar del profesor"
+        "alt": "Constructor del curso Fracciones y decimales del profesor Andrés"
       },
       {
         "id": "coordinacion",
@@ -341,13 +341,13 @@
           "Avisos al colegio, a un grado o a un grupo."
         ],
         "captura": "capturas/rol-coordinacion.png",
-        "alt": "Tablero de comparativos por grupo"
+        "alt": "Alerta temprana con las alertas abiertas del colegio"
       },
       {
         "id": "acudiente",
         "nombre": "Acudiente",
         "pardo": "saluda",
-        "globo": "Marta sabe cómo le fue a Sofía sin esperar a la entrega de notas.",
+        "globo": "Claudia sabe cómo va Samuel sin esperar a la entrega de notas.",
         "titulo": "«Mis hijos»: la semana, día por día",
         "puntos": [
           "Qué estudió cada día: tiempo, lecciones y evaluaciones.",
@@ -357,7 +357,7 @@
           "Resumen semanal por WhatsApp, solo si el acudiente lo autoriza."
         ],
         "captura": "capturas/rol-acudiente.png",
-        "alt": "Portal Mis hijos con la semana de Sofía"
+        "alt": "«Mis hijos»: lo que hay que tener en cuenta de Samuel y sus días de estudio"
       }
     ],
     "boton": "Quiero verlo con mi colegio"
