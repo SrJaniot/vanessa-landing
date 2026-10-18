@@ -1,0 +1,47 @@
+<section id="recorrido" tabindex="-1" class="seccion fondo-patron">
+  <div class="contenedor">
+    <div class="text-center max-w-[760px] mx-auto">
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion mx-auto">{{ c.texto }}</p>
+    </div>
+
+    <div data-aparecer role="tablist" aria-label="Roles" class="mt-10 mx-auto max-w-[820px] grid grid-cols-2 sm:grid-cols-4 gap-2 p-2 rounded-[22px] bg-hoja border border-linea shadow-[var(--sombra)]">
+      @for (r of c.roles; track r.id; let i = $index) {
+        <button #pestana type="button" role="tab" [id]="'tab-' + r.id" [attr.aria-selected]="activo() === i" [attr.aria-controls]="'panel-rol'"
+          [attr.tabindex]="activo() === i ? 0 : -1" (click)="elegir(i)" (keydown)="teclado($event, i)"
+          class="min-h-[52px] px-3 rounded-2xl font-extrabold text-[15px] transition-all duration-300 cursor-pointer leading-tight"
+          [class]="activo() === i ? 'bg-sello text-sobre-tinta shadow-[inset_0_-4px_0_rgb(0_0_0/.18)]' : 'text-grafito hover:bg-sello-suave hover:text-sello'">
+          {{ r.nombre }}
+        </button>
+      }
+    </div>
+
+    <div id="panel-rol" role="tabpanel" [attr.aria-labelledby]="'tab-' + rol.id" class="mt-10 grid lg:grid-cols-[1fr_1.15fr] gap-10 items-center">
+      <div>
+        <div class="rol-animar flex items-end gap-3">
+          <app-pardo class="rol-pardo" [estado]="rol.pardo" [tamano]="120" [mirar]="true" />
+          <p class="globo globo-izquierda text-[16px] mb-6 max-w-[300px]">{{ rol.globo }}</p>
+        </div>
+        <h3 class="rol-animar text-[clamp(1.6rem,3.6vw,2.2rem)] mt-6">{{ rol.titulo }}</h3>
+        <ul class="mt-4 grid gap-3 list-none p-0">
+          @for (p of rol.puntos; track p) {
+            <li class="rol-animar flex gap-3 items-start">
+              <span class="w-7 h-7 rounded-full bg-acento-amarillo text-[#1F2A44] grid place-items-center shrink-0 mt-0.5"><app-icono nombre="estrella" [tamano]="15" [grosor]="2.4" /></span>
+              <span>{{ p }}</span>
+            </li>
+          }
+        </ul>
+        <button type="button" class="rol-animar btn-secondary mt-7" (click)="contacto.abrir()">{{ c.boton }}</button>
+      </div>
+      <div class="rol-animar">
+        @switch (rol.id) {
+          @case ('estudiante') { <app-captura marco="plano" mockup="estudiante" [archivo]="rol.captura" [alt]="rol.alt" /> }
+          @case ('profesor') { <app-captura marco="plano" mockup="profesor" [archivo]="rol.captura" [alt]="rol.alt" /> }
+          @case ('coordinacion') { <app-captura marco="plano" mockup="coordinacion" [archivo]="rol.captura" [alt]="rol.alt" /> }
+          @default { <app-captura marco="plano" [mockup]="mockupDe(rol.id)" [archivo]="rol.captura" [alt]="rol.alt" /> }
+        }
+      </div>
+    </div>
+  </div>
+</section>

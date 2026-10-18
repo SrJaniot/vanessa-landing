@@ -1,0 +1,36 @@
+<section id="problema" tabindex="-1" class="seccion">
+  <div class="contenedor">
+    <div class="max-w-[760px]">
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion">{{ c.texto }}</p>
+    </div>
+    <ul class="problema-rejilla grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12 list-none p-0">
+      @for (it of c.items; track it.titulo) {
+        <li data-aparecer class="card p-6 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300" [class]="'acento-' + it.color">
+          <div class="flex items-center gap-3">
+            <span class="problema-icono icono-acento w-12 h-12 rounded-2xl grid place-items-center shrink-0"><app-icono [nombre]="it.icono" [tamano]="26" /></span>
+            <h3 class="text-[20px] leading-tight">{{ it.titulo }}</h3>
+          </div>
+          <p class="text-grafito m-0">{{ it.texto }}</p>
+          <div class="mt-auto pt-3 border-t-2 border-dashed border-linea">
+            @if (it.cifra) {
+              <p class="m-0 font-titulo font-semibold text-[clamp(2rem,5vw,2.6rem)] leading-none" style="color: var(--a-fuerte)">
+                <app-contador [cifra]="it.cifra" [pendiente]="c.pendiente" />
+              </p>
+              <p class="m-0 mt-1.5 text-[14px] text-grafito">{{ it.cifra.descripcion }}</p>
+              @if (it.cifra.fuente) {
+                <p class="m-0 mt-1.5 text-[12.5px] text-grafito">{{ c.fuente }}:
+                  <a [href]="it.cifra.fuente" target="_blank" rel="noopener" class="text-sello underline underline-offset-2">{{ it.cifra.fuenteNombre || it.cifra.fuente }}</a>
+                </p>
+              }
+            } @else if (it.pregunta) {
+              <p class="m-0 font-titulo font-semibold text-[21px] leading-snug" style="color: var(--a-fuerte)">{{ it.pregunta }}</p>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+    <p data-aparecer class="mt-6 text-[13.5px] text-grafito">{{ c.notaCifras }}</p>
+  </div>
+</section>

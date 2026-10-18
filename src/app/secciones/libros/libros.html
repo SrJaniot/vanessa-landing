@@ -1,0 +1,97 @@
+<section id="libros" tabindex="-1" class="seccion bg-hoja">
+  <div class="contenedor grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <div>
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion">{{ c.texto }}</p>
+      <div data-aparecer class="mt-7 rounded-3xl p-5 bg-acento-azul-suave border-2 border-acento-azul/30">
+        <p class="m-0 font-titulo font-semibold text-[22px] text-acento-azul-fuerte">{{ c.pregunta.texto }}</p>
+        <p class="m-0 mt-1.5 text-tinta">{{ c.pregunta.respuesta }}</p>
+      </div>
+      <ul class="mt-6 grid gap-3 list-none p-0">
+        @for (p of c.puntos; track p) {
+          <li data-aparecer class="flex gap-3 items-start">
+            <span class="w-8 h-8 rounded-full bg-acento-verde-suave text-acento-verde-fuerte grid place-items-center shrink-0"><app-icono nombre="check" [tamano]="18" [grosor]="2.6" /></span>
+            <span class="pt-1">{{ p }}</span>
+          </li>
+        }
+      </ul>
+      <p data-aparecer class="mt-6 text-[14px] text-grafito border-l-4 border-acento-amarillo pl-3">
+        {{ c.circular.texto }}
+        <a [href]="c.circular.fuente" target="_blank" rel="noopener" class="text-sello underline underline-offset-2">{{ c.circular.fuenteNombre }}</a>
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 min-w-0">
+      <!-- CALCULADORA -->
+      <form data-aparecer class="card p-6 sm:p-7" (submit)="$event.preventDefault()" aria-labelledby="calc-titulo">
+        <h3 id="calc-titulo" class="text-[24px]">{{ c.calculadora.titulo }}</h3>
+        <div class="grid sm:grid-cols-2 gap-4 mt-5">
+          <div>
+            <label class="label-field" for="calc-estudiantes">{{ c.calculadora.etiquetaEstudiantes }}</label>
+            <input id="calc-estudiantes" class="input-field" type="number" inputmode="numeric" min="0" max="20000" step="10"
+              name="estudiantes" [(ngModel)]="estudiantes" (ngModelChange)="limitar()">
+          </div>
+          <div>
+            <label class="label-field" for="calc-costo">{{ c.calculadora.etiquetaCosto }}</label>
+            <input id="calc-costo" class="input-field" type="number" inputmode="numeric" min="0" step="1000"
+              name="costo" [(ngModel)]="costo" (ngModelChange)="limitar()" aria-describedby="calc-costo-nota">
+          </div>
+        </div>
+        <p id="calc-costo-nota" class="text-[13px] text-grafito mt-2 mb-0">
+          {{ c.calculadora.costoPendiente }}
+          @if (c.calculadora.costoPorDefecto.fuente) {
+            <a [href]="c.calculadora.costoPorDefecto.fuente" target="_blank" rel="noopener" class="text-sello underline underline-offset-2">{{ c.calculadora.costoPorDefecto.fuenteNombre || 'Fuente' }}</a>
+          }
+        </p>
+        <div class="mt-5">
+          <label class="label-field flex justify-between" for="calc-porcentaje"><span>{{ c.calculadora.etiquetaPorcentaje }}</span><span class="text-sello">{{ porcentaje }} %</span></label>
+          <input id="calc-porcentaje" class="rango" type="range" min="0" max="100" step="10" name="porcentaje" [(ngModel)]="porcentaje">
+        </div>
+        <div class="mt-5 rounded-2xl p-5 bg-acento-verde-suave" aria-live="polite">
+          <p class="m-0 text-[14px] font-bold text-acento-verde-fuerte">{{ c.calculadora.resultadoTitulo }}</p>
+          @if (hayResultado) {
+            <p class="m-0 font-titulo font-semibold text-[clamp(1.9rem,6vw,2.8rem)] leading-tight text-acento-verde-fuerte break-words">{{ ahorro }}</p>
+            <p class="m-0 text-[14px] text-acento-verde-fuerte">{{ ahorroEstudiante }} {{ c.calculadora.porEstudiante }}</p>
+          } @else {
+            <p class="m-0 mt-1 text-acento-verde-fuerte">{{ c.calculadora.resultadoVacio }}</p>
+          }
+        </div>
+        <p class="text-[13px] text-grafito mt-3 mb-0">{{ c.calculadora.notaHonesta }}</p>
+      </form>
+
+      <!-- MALETA QUE SE ALIGERA -->
+      <div data-aparecer class="card p-6 flex flex-col sm:flex-row items-center gap-6">
+        <svg class="maleta w-[170px] shrink-0 overflow-visible" viewBox="0 0 200 230" role="img" [attr.aria-label]="c.maleta.etiquetaPeso + ': ' + (libros.length - fuera) + ' / ' + libros.length">
+          @for (l of libros; track $index; let i = $index) {
+            <rect class="libro" [class.fuera]="i < fuera" [attr.x]="44 + i * 23" [attr.y]="96 - l.alto" width="20" [attr.height]="l.alto + 30" rx="3"
+              [attr.fill]="l.color" stroke="#1F2A44" stroke-width="2.5"
+              [style.--dx]="((i - 2) * 30) + 'px'" [style.--rot]="((i - 2) * 14) + 'deg'" />
+          }
+          <path d="M70 70 Q70 40 100 40 Q130 40 130 70" fill="none" stroke="#1D4F94" stroke-width="9" stroke-linecap="round"/>
+          <rect x="32" y="80" width="136" height="138" rx="30" fill="#2F7FE0" stroke="#1D4F94" stroke-width="4"/>
+          <rect x="56" y="148" width="88" height="50" rx="14" fill="#1B66C9" stroke="#1D4F94" stroke-width="3"/>
+          <rect x="94" y="140" width="12" height="16" rx="3" fill="#FFC531" stroke="#C98A00" stroke-width="2"/>
+          <circle cx="100" cy="112" r="10" fill="#FFF2D6" stroke="#7A4B12" stroke-width="2.5"/>
+          <circle cx="96.5" cy="110" r="1.6" fill="#2A2233"/><circle cx="103.5" cy="110" r="1.6" fill="#2A2233"/>
+          <path d="M96 115 q4 3 8 0" fill="none" stroke="#5A3325" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <div class="flex-1 w-full">
+          <h3 class="text-[22px]">{{ c.maleta.titulo }}</h3>
+          <p class="text-grafito mt-1 mb-3">{{ c.maleta.texto }}</p>
+          <p class="m-0 text-[14px] font-bold flex justify-between"><span>{{ c.maleta.etiquetaPeso }}</span><span>{{ libros.length - fuera }} / {{ libros.length }}</span></p>
+          <div class="h-4 rounded-full bg-linea overflow-hidden mt-1.5">
+            <div class="h-full rounded-full transition-all duration-700" [style.width.%]="(libros.length - fuera) / libros.length * 100"
+              [style.background]="fuera >= 3 ? 'var(--acento-verde)' : fuera >= 1 ? 'var(--acento-amarillo)' : 'var(--acento-coral)'"></div>
+          </div>
+          <p class="text-[13px] text-grafito mt-3 mb-0">
+            {{ c.maleta.pendiente }}
+            @if (c.maleta.pesoActual.fuente) {
+              <a [href]="c.maleta.pesoActual.fuente" target="_blank" rel="noopener" class="text-sello underline underline-offset-2">{{ c.maleta.pesoActual.fuenteNombre || 'Fuente' }}</a>
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

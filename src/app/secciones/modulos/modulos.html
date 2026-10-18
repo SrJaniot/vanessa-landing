@@ -1,0 +1,59 @@
+<section id="modulos" tabindex="-1" class="seccion bg-hoja">
+  <div class="contenedor">
+    <div class="max-w-[760px]">
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion">{{ c.texto }}</p>
+    </div>
+    <ul class="modulos-rejilla grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 list-none p-0">
+      @for (m of c.items; track m.id) {
+        <li class="modulo-tarjeta" [class]="'acento-' + m.color">
+          <button type="button" (click)="abrir(m, $event)" [attr.aria-label]="m.nombre + ': ' + c.verDetalle"
+            class="group w-full h-full text-left card p-5 flex flex-col gap-3 cursor-pointer border-2 !border-transparent hover:!border-[color:var(--a)] focus-visible:!border-[color:var(--a)] transition-all duration-300 hover:-translate-y-1.5 hover:rotate-[-.6deg] hover:shadow-[0_18px_36px_-20px_rgb(31_42_68/.45)]">
+            <span class="flex items-center gap-3">
+              <span class="icono-acento w-12 h-12 rounded-2xl grid place-items-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-8deg]"><app-icono [nombre]="m.icono" [tamano]="26" /></span>
+              <span class="font-titulo font-semibold text-[20px] leading-tight text-tinta">{{ m.nombre }}</span>
+            </span>
+            <span class="text-grafito text-[15.5px]">{{ m.virtud }}</span>
+            <span class="mt-auto inline-flex items-center gap-1.5 font-extrabold text-[14px]" style="color: var(--a-fuerte)">{{ c.verDetalle }} <app-icono nombre="flecha" [tamano]="16" class="transition-transform group-hover:translate-x-1" /></span>
+          </button>
+        </li>
+      }
+      <li class="acento-amarillo">
+        <div class="h-full rounded-[22px] p-6 bg-acento-amarillo flex flex-col gap-3 justify-between text-[#1F2A44]">
+          <p class="m-0 font-titulo font-semibold text-[22px] leading-tight">{{ c.cta }}</p>
+          <button type="button" class="btn-primary self-start" (click)="contacto.abrir()">{{ c.boton }}</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  @if (elegido(); as m) {
+    <div class="fixed inset-0 z-[70] grid place-items-center p-4 bg-[rgb(15_20_34/.55)] backdrop-blur-[2px]" (click)="cerrar()">
+      <div #dialogo role="dialog" aria-modal="true" [attr.aria-labelledby]="'det-' + m.id" tabindex="-1" (keydown)="atrapar($event)" (click)="$event.stopPropagation()"
+        class="card w-full max-w-[560px] max-h-[88vh] overflow-y-auto p-6 sm:p-8 outline-none" [class]="'acento-' + m.color">
+        <div class="flex items-start gap-3">
+          <span class="det-animar icono-acento w-14 h-14 rounded-2xl grid place-items-center shrink-0"><app-icono [nombre]="m.icono" [tamano]="30" /></span>
+          <h3 [id]="'det-' + m.id" class="det-animar text-[26px] leading-tight pt-2 flex-1">{{ m.nombre }}</h3>
+          <button type="button" (click)="cerrar()" class="w-11 h-11 grid place-items-center rounded-xl border-2 border-linea text-tinta hover:border-sello cursor-pointer shrink-0" [attr.aria-label]="c.cerrar">
+            <app-icono nombre="cerrar" [tamano]="20" />
+          </button>
+        </div>
+        <p class="det-animar mt-5 mb-0 text-[12.5px] font-extrabold uppercase tracking-[.08em] text-grafito">{{ c.virtud }}</p>
+        <p class="det-animar m-0 mt-1 text-[17px]">{{ m.virtud }}</p>
+        <div class="det-animar mt-4 rounded-2xl p-4 icono-acento">
+          <p class="m-0 text-[12.5px] font-extrabold uppercase tracking-[.08em]">{{ c.diferencia }}</p>
+          <p class="m-0 mt-1 text-[16px] font-bold">{{ m.diferencia }}</p>
+        </div>
+        <ul class="mt-5 grid gap-2.5 list-none p-0">
+          @for (d of m.detalle; track d) {
+            <li class="det-animar flex gap-2.5 items-start">
+              <span class="mt-1 w-5 h-5 rounded-full grid place-items-center shrink-0 text-white" style="background: var(--a)"><app-icono nombre="check" [tamano]="13" [grosor]="3" /></span>
+              <span>{{ d }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  }
+</section>

@@ -1,0 +1,315 @@
+/* Import Tailwind v4 */
+@use "tailwindcss";
+/* Fuentes escolares y amables: Fredoka (titulos) y Nunito (textos) */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Nunito:ital,wght@0,400..900;1,400&display=swap');
+
+/* =========================
+   TABLA DE COLORES DE VANESSA (LA MISMA DE LA PLATAFORMA: frontend/vanessa2/src/styles.scss)
+   EL TEMA CLARO ES EL DE SIEMPRE. EL OSCURO ES OPCIONAL: data-theme="dark" EN <html> (servicios/tema.service.ts)
+   uso: bg-papel, text-tinta, border-linea, bg-sello, bg-acento-amarillo ...
+========================= */
+:root {
+  --tinta: #1F2A44;          /* textos y titulos (azul marino) */
+  --sello: #1B66C9;          /* color principal: botones, barras de progreso, enlaces y etiquetas (azul cielo con contraste AA) */
+  --sello-suave: #E6F0FD;    /* fondo de "En curso" y de las etiquetas azules */
+  --papel: #FFF8EC;          /* fondo general (crema de cuaderno) */
+  --hoja: #FFFFFF;           /* recuadros, tarjetas y barra superior */
+  --grafito: #5A6480;        /* textos secundarios y ayudas */
+  --linea: #EADFC9;          /* bordes y parte vacia de las barras */
+  --correcto: #1B7A4A;
+  --correcto-fondo: #DFF5E8;
+  --error: #C23A26;
+  --error-fondo: #FFE7E2;
+  --foco: #2F7FE0;           /* contorno al navegar con el teclado */
+  --lateral: #FFFFFF;        /* barra lateral (clara) */
+  --lateral-claro: #EEF5FF;  /* fondo del item al pasar el mouse en la barra lateral */
+  --menu: #5A6480;           /* textos del menu no seleccionados */
+  --sobre-tinta: #FFFFFF;    /* texto de los botones principales */
+  --campo: #FFFFFF;          /* fondo de los campos de los formularios */
+  /* ACENTOS ESCOLARES (DECORACION, ICONOS, TARJETAS). LOS -fuerte SON PARA TEXTO SOBRE BLANCO O SOBRE SU VERSION -suave */
+  --acento-azul: #2F7FE0;
+  --acento-amarillo: #FFC531;
+  --acento-verde: #2FAE6B;
+  --acento-coral: #FF6F59;
+  --acento-morado: #8B6CEF;
+  --acento-azul-suave: #E6F0FD;
+  --acento-amarillo-suave: #FFF3CC;
+  --acento-verde-suave: #DFF5E8;
+  --acento-coral-suave: #FFE6E1;
+  --acento-morado-suave: #EEE9FD;
+  --acento-azul-fuerte: #1B66C9;
+  --acento-amarillo-fuerte: #8A5A00;
+  --acento-verde-fuerte: #1B7A4A;
+  --acento-coral-fuerte: #B8432F;
+  --acento-morado-fuerte: #6B4FD8;
+  --sombra: 0 6px 18px -10px rgb(31 42 68 / .25);
+  /* PATRON DE UTILES ESCOLARES (LAPIZ, LIBRO, REGLA, ESTRELLA, MANZANA, GLOBO, "a b c", "1+2"). SE GENERA CON UN SVG DE 300 x 300 */
+  --patron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%231F2A44' stroke-opacity='.055' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='rotate(-35 58 46)'%3E%3Crect x='24' y='40' width='56' height='13' rx='3'/%3E%3Cpath d='M80 40 L96 46.5 L80 53 M34 40 V53 M90 44.3 L96 46.5 L90 48.7'/%3E%3C/g%3E%3Cpath d='M196 60 Q212 51 232 55 V86 Q212 82 196 91 Q180 82 160 86 V55 Q180 51 196 60 Z M196 60 V91'/%3E%3Cg transform='rotate(-10 90 236)'%3E%3Crect x='36' y='226' width='108' height='20' rx='4'/%3E%3Cpath d='M48 226 v8 M60 226 v5 M72 226 v8 M84 226 v5 M96 226 v8 M108 226 v5 M120 226 v8 M132 226 v5'/%3E%3C/g%3E%3Cpath d='M256 140 l5.5 11.2 12.3 1.8 -8.9 8.7 2.1 12.3 -11-5.8 -11 5.8 2.1-12.3 -8.9-8.7 12.3-1.8 Z'/%3E%3Cpath d='M140 138 C130 129 113 134 115 152 C117 170 131 176 140 169 C149 176 163 170 165 152 C167 134 150 129 140 138 Z M140 138 Q140 129 146 123 M141 133 Q149 124 158 128 Q149 135 141 133 Z'/%3E%3Ccircle cx='240' cy='238' r='19'/%3E%3Cellipse cx='240' cy='238' rx='8' ry='19'/%3E%3Cpath d='M221 238 H259 M224 228 H256 M224 248 H256 M214 226 Q206 252 230 263 M240 257 V272 M228 274 H252'/%3E%3Ccircle cx='112' cy='26' r='2.5'/%3E%3Ccircle cx='278' cy='100' r='2.5'/%3E%3Ccircle cx='18' cy='150' r='2.5'/%3E%3Ccircle cx='186' cy='282' r='2.5'/%3E%3C/g%3E%3Cg fill='%231F2A44' fill-opacity='.055' font-family='Arial Rounded MT Bold, Nunito, sans-serif' font-weight='700'%3E%3Ctext x='26' y='132' font-size='24'%3Ea b c%3C/text%3E%3Ctext x='182' y='202' font-size='24'%3E1+2%3C/text%3E%3C/g%3E%3C/svg%3E");
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --tinta: #EEF2FB;
+  --sello: #4A8FEF;
+  --sello-suave: #1C2C47;
+  --papel: #141A2B;
+  --hoja: #1D2438;
+  --grafito: #AEB6CA;
+  --linea: #303A55;
+  --correcto: #5BD394;
+  --correcto-fondo: #173528;
+  --error: #FF8F7D;
+  --error-fondo: #3D1F1C;
+  --foco: #8DB8FF;
+  --lateral: #1A2134;
+  --lateral-claro: #243050;
+  --menu: #AEB6CA;
+  --sobre-tinta: #0F1422;
+  --campo: #161C2E;
+  --acento-azul: #6FA8F5;
+  --acento-amarillo: #FFD25E;
+  --acento-verde: #4CCB88;
+  --acento-coral: #FF8A78;
+  --acento-morado: #A893F5;
+  --acento-azul-suave: #1C2C47;
+  --acento-amarillo-suave: #3A3115;
+  --acento-verde-suave: #173528;
+  --acento-coral-suave: #3D221E;
+  --acento-morado-suave: #2A2447;
+  --acento-azul-fuerte: #8DB8FF;
+  --acento-amarillo-fuerte: #FFD25E;
+  --acento-verde-fuerte: #5BD394;
+  --acento-coral-fuerte: #FF9C8C;
+  --acento-morado-fuerte: #B9A8FA;
+  --sombra: 0 6px 18px -10px rgb(0 0 0 / .6);
+  --patron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%23EEF2FB' stroke-opacity='.06' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='rotate(-35 58 46)'%3E%3Crect x='24' y='40' width='56' height='13' rx='3'/%3E%3Cpath d='M80 40 L96 46.5 L80 53 M34 40 V53 M90 44.3 L96 46.5 L90 48.7'/%3E%3C/g%3E%3Cpath d='M196 60 Q212 51 232 55 V86 Q212 82 196 91 Q180 82 160 86 V55 Q180 51 196 60 Z M196 60 V91'/%3E%3Cg transform='rotate(-10 90 236)'%3E%3Crect x='36' y='226' width='108' height='20' rx='4'/%3E%3Cpath d='M48 226 v8 M60 226 v5 M72 226 v8 M84 226 v5 M96 226 v8 M108 226 v5 M120 226 v8 M132 226 v5'/%3E%3C/g%3E%3Cpath d='M256 140 l5.5 11.2 12.3 1.8 -8.9 8.7 2.1 12.3 -11-5.8 -11 5.8 2.1-12.3 -8.9-8.7 12.3-1.8 Z'/%3E%3Cpath d='M140 138 C130 129 113 134 115 152 C117 170 131 176 140 169 C149 176 163 170 165 152 C167 134 150 129 140 138 Z M140 138 Q140 129 146 123 M141 133 Q149 124 158 128 Q149 135 141 133 Z'/%3E%3Ccircle cx='240' cy='238' r='19'/%3E%3Cellipse cx='240' cy='238' rx='8' ry='19'/%3E%3Cpath d='M221 238 H259 M224 228 H256 M224 248 H256 M214 226 Q206 252 230 263 M240 257 V272 M228 274 H252'/%3E%3Ccircle cx='112' cy='26' r='2.5'/%3E%3Ccircle cx='278' cy='100' r='2.5'/%3E%3Ccircle cx='18' cy='150' r='2.5'/%3E%3Ccircle cx='186' cy='282' r='2.5'/%3E%3C/g%3E%3Cg fill='%23EEF2FB' fill-opacity='.06' font-family='Arial Rounded MT Bold, Nunito, sans-serif' font-weight='700'%3E%3Ctext x='26' y='132' font-size='24'%3Ea b c%3C/text%3E%3Ctext x='182' y='202' font-size='24'%3E1+2%3C/text%3E%3C/g%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-tinta: var(--tinta);
+  --color-sello: var(--sello);
+  --color-sello-suave: var(--sello-suave);
+  --color-papel: var(--papel);
+  --color-hoja: var(--hoja);
+  --color-grafito: var(--grafito);
+  --color-linea: var(--linea);
+  --color-correcto: var(--correcto);
+  --color-correcto-fondo: var(--correcto-fondo);
+  --color-error: var(--error);
+  --color-error-fondo: var(--error-fondo);
+  --color-foco: var(--foco);
+  --color-lateral: var(--lateral);
+  --color-lateral-claro: var(--lateral-claro);
+  --color-menu: var(--menu);
+  --color-sobre-tinta: var(--sobre-tinta);
+  --color-campo: var(--campo);
+  --color-acento-azul: var(--acento-azul);
+  --color-acento-amarillo: var(--acento-amarillo);
+  --color-acento-verde: var(--acento-verde);
+  --color-acento-coral: var(--acento-coral);
+  --color-acento-morado: var(--acento-morado);
+  --color-acento-azul-suave: var(--acento-azul-suave);
+  --color-acento-amarillo-suave: var(--acento-amarillo-suave);
+  --color-acento-verde-suave: var(--acento-verde-suave);
+  --color-acento-coral-suave: var(--acento-coral-suave);
+  --color-acento-morado-suave: var(--acento-morado-suave);
+  --color-acento-azul-fuerte: var(--acento-azul-fuerte);
+  --color-acento-amarillo-fuerte: var(--acento-amarillo-fuerte);
+  --color-acento-verde-fuerte: var(--acento-verde-fuerte);
+  --color-acento-coral-fuerte: var(--acento-coral-fuerte);
+  --color-acento-morado-fuerte: var(--acento-morado-fuerte);
+
+  --font-titulo: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-texto: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--font-texto);
+  font-size: 16px;
+  line-height: 1.55;
+  background-color: var(--papel);
+  color: var(--tinta);
+}
+
+/* EN LA CAPA BASE: ASI LAS CLASES DE TAILWIND (mb-3, text-xl, font-bold...) SI LES GANAN */
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* FONDO CON UTILES ESCOLARES MUY SUAVES */
+.fondo-patron {
+  background-image: var(--patron);
+  background-size: 300px 300px;
+}
+
+/* =========================
+   PROPIO DE LA LANDING (MAS AUDAZ QUE LA PLATAFORMA, MISMA FAMILIA)
+========================= */
+:root {
+  --cielo: #DCEBFF;          /* banda azul cielo de la portada y del cierre */
+  --cielo-fuerte: #BFD9FF;
+  --sol: #FFC531;
+  --oscuro-seccion: #1F2A44; /* seccion de contraste (comparativa) */
+  --sobre-oscuro: #FFFFFF;
+}
+:root[data-theme="dark"] {
+  --cielo: #18233A;
+  --cielo-fuerte: #22324F;
+  --sol: #FFD25E;
+  --oscuro-seccion: #0E1322;
+  --sobre-oscuro: #EEF2FB;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  overflow-x: hidden;
+}
+body { overflow-x: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
+
+::selection { background: var(--acento-amarillo); color: #1F2A44; }
+
+/* ENLACE "SALTAR AL CONTENIDO" (ACCESIBILIDAD) */
+.saltar {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--sello); color: var(--sobre-tinta); padding: 10px 16px; border-radius: 10px; font-weight: 800;
+  transition: top .2s;
+}
+.saltar:focus { top: 12px; }
+
+@layer components {
+
+  .card {
+    @apply bg-hoja border border-linea rounded-[22px] shadow-[var(--sombra)];
+  }
+
+  .contenedor {
+    @apply w-full max-w-[1180px] mx-auto px-4 sm:px-6;
+  }
+
+  .seccion {
+    @apply relative py-20 sm:py-28;
+  }
+
+  .etiqueta-seccion {
+    @apply inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-[13px] font-extrabold uppercase tracking-[.08em] bg-acento-amarillo-suave text-acento-amarillo-fuerte;
+  }
+
+  .titulo-seccion {
+    @apply font-titulo font-semibold text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] tracking-[-.01em] mt-4;
+  }
+
+  .texto-seccion {
+    @apply text-grafito text-[17px] sm:text-[19px] mt-4 max-w-[680px];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 min-h-[52px] px-6 rounded-[16px] font-extrabold text-[16px] bg-sello text-sobre-tinta border-2 border-sello shadow-[inset_0_-4px_0_rgb(0_0_0/.18),0_10px_24px_-12px_rgb(27_102_201/.7)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[.98] disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer;
+  }
+
+  .btn-amarillo {
+    @apply inline-flex items-center justify-center gap-2 min-h-[52px] px-6 rounded-[16px] font-extrabold text-[16px] bg-acento-amarillo text-[#1F2A44] border-2 border-acento-amarillo shadow-[inset_0_-4px_0_rgb(0_0_0/.15)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 active:scale-[.98] cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 min-h-[52px] px-6 rounded-[16px] font-extrabold text-[16px] bg-hoja text-sello border-2 border-sello transition-all duration-200 hover:-translate-y-0.5 hover:bg-sello-suave active:scale-[.98] disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer;
+  }
+
+  .label-field {
+    @apply block font-bold text-[14.5px] mb-1.5;
+  }
+
+  .input-field {
+    @apply w-full min-h-[48px] border-2 border-linea rounded-[14px] px-3.5 text-[16px] bg-campo text-tinta placeholder-grafito/60 transition-shadow duration-200 focus:outline-none focus:border-foco focus:ring-[3px] focus:ring-foco/25;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[13.5px] font-bold;
+  }
+}
+
+/* COLORES DE ACENTO POR NOMBRE (LOS USAN TARJETAS E ICONOS: class="acento-coral") */
+.acento-azul { --a: var(--acento-azul); --a-suave: var(--acento-azul-suave); --a-fuerte: var(--acento-azul-fuerte); }
+.acento-amarillo { --a: var(--acento-amarillo); --a-suave: var(--acento-amarillo-suave); --a-fuerte: var(--acento-amarillo-fuerte); }
+.acento-verde { --a: var(--acento-verde); --a-suave: var(--acento-verde-suave); --a-fuerte: var(--acento-verde-fuerte); }
+.acento-coral { --a: var(--acento-coral); --a-suave: var(--acento-coral-suave); --a-fuerte: var(--acento-coral-fuerte); }
+.acento-morado { --a: var(--acento-morado); --a-suave: var(--acento-morado-suave); --a-fuerte: var(--acento-morado-fuerte); }
+.icono-acento { background: var(--a-suave); color: var(--a-fuerte); }
+
+/* SUBRAYADO A MANO ALZADA DEL TITULAR */
+.resaltado {
+  position: relative; color: var(--sello);
+}
+@media (min-width: 640px) { .resaltado { white-space: nowrap; } }
+.resaltado::after {
+  content: ''; position: absolute; left: -2%; right: -2%; bottom: -.08em; height: .32em; z-index: -1;
+  background: var(--acento-amarillo); border-radius: 999px; opacity: .55; transform: rotate(-1.2deg);
+}
+
+/* ONDA ENTRE SECCIONES */
+.onda { display: block; width: 100%; height: 48px; }
+
+/* BARRA DE PROGRESO DEL SCROLL */
+.progreso-scroll {
+  position: fixed; top: 0; left: 0; height: 4px; z-index: 60; width: 100%;
+  transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, var(--acento-azul), var(--acento-verde), var(--acento-amarillo), var(--acento-coral), var(--acento-morado));
+}
+
+/* CIFRAS PENDIENTES: SE VEN COMO MARCADOR, PARA QUE NADIE LAS CONFUNDA CON UN DATO */
+.cifra-pendiente {
+  display: inline-flex; align-items: center; border: 2px dashed currentColor; border-radius: 12px; padding: 2px 10px;
+  font-size: .5em; letter-spacing: .06em; font-weight: 800; opacity: .75; vertical-align: middle;
+}
+
+/* GLOBO DE TEXTO DE PARDO */
+.globo {
+  position: relative; background: var(--hoja); color: var(--tinta); border: 2.5px solid var(--tinta);
+  border-radius: 20px; padding: 12px 16px; font-weight: 700; line-height: 1.35; box-shadow: 4px 4px 0 var(--tinta);
+}
+.globo-abajo::after, .globo-izquierda::after, .globo-derecha::after {
+  content: ''; position: absolute; width: 18px; height: 18px; background: var(--hoja);
+  border-right: 2.5px solid var(--tinta); border-bottom: 2.5px solid var(--tinta);
+}
+.globo-abajo::after { bottom: -11px; left: 34px; transform: rotate(45deg); }
+.globo-izquierda::after { left: -11px; top: 50%; margin-top: -9px; transform: rotate(135deg); }
+.globo-derecha::after { right: -11px; top: 50%; margin-top: -9px; transform: rotate(-45deg); }
+
+/* TABLA COMPARATIVA */
+.tabla-comparativa { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 720px; }
+.tabla-comparativa th, .tabla-comparativa td { padding: 14px 12px; border-bottom: 1px solid rgb(255 255 255 / .12); text-align: center; }
+.tabla-comparativa th:first-child, .tabla-comparativa td:first-child { text-align: left; position: sticky; left: 0; background: var(--oscuro-seccion); z-index: 1; }
+.tabla-comparativa .col-vanessa { background: rgb(255 197 49 / .12); }
+
+/* FAQ */
+details.faq > summary { list-style: none; cursor: pointer; }
+details.faq > summary::-webkit-details-marker { display: none; }
+details.faq[open] .faq-signo { transform: rotate(45deg); }
+
+@keyframes sacudir { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@keyframes entrar { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes globo-pop { from { opacity: 0; transform: translateY(8px) scale(.9); } to { opacity: 1; transform: none; } }
+section[tabindex="-1"]:focus { outline: none; }

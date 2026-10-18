@@ -1,0 +1,43 @@
+<section id="comparativa" tabindex="-1" class="seccion bg-[var(--oscuro-seccion)] text-[var(--sobre-oscuro)]">
+  <div class="contenedor">
+    <div class="max-w-[760px]">
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion text-white">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion !text-white/75">{{ c.texto }}</p>
+    </div>
+    <ul data-aparecer class="flex flex-wrap gap-4 mt-8 list-none p-0 text-[14px] font-bold">
+      @for (v of valores; track v) {
+        <li class="flex items-center gap-2"><span class="w-7 h-7 rounded-full grid place-items-center" [class]="clase(v)"><app-icono [nombre]="icono(v)" [tamano]="15" [grosor]="3" /></span>{{ c.leyenda[v] }}</li>
+      }
+    </ul>
+    <p class="sm:hidden mt-5 mb-0 text-[13.5px] font-bold text-acento-amarillo flex items-center gap-1.5">{{ c.deslizar }} <app-icono nombre="flecha" [tamano]="16" /></p>
+    <div data-aparecer class="mt-6 overflow-x-auto rounded-[22px] border border-white/15" tabindex="0" role="region" [attr.aria-label]="c.titulo">
+      <table class="tabla-comparativa">
+        <caption class="sr-only">{{ c.titulo }}</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="text-[13px] uppercase tracking-[.06em] text-white/60 font-extrabold w-[34%]">{{ c.caracteristica }}</th>
+            @for (col of c.columnas; track col; let i = $index) {
+              <th scope="col" class="font-titulo font-semibold text-[16px] leading-tight" [class.col-vanessa]="i === 0" [class.text-acento-amarillo]="i === 0">{{ col }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (f of c.filas; track f.caracteristica) {
+            <tr>
+              <th scope="row" class="font-bold text-[15px]">{{ f.caracteristica }}</th>
+              @for (v of f.valores; track $index; let i = $index) {
+                <td [class.col-vanessa]="i === 0">
+                  <span class="comp-marca inline-grid place-items-center w-9 h-9 rounded-full" [class]="clase(v)" [attr.aria-label]="c.leyenda[v]" role="img">
+                    <app-icono [nombre]="icono(v)" [tamano]="18" [grosor]="3" />
+                  </span>
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <p data-aparecer class="mt-4 text-[13.5px] text-white/65">{{ c.nota }}</p>
+  </div>
+</section>

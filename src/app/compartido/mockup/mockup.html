@@ -1,0 +1,176 @@
+<div class="mk" [class.mk-celular]="tipo === 'celular'" aria-hidden="true">
+  @switch (tipo) {
+
+    <!-- CELULAR DEL ESTUDIANTE: CAMINO DE TEMAS -->
+    @case ('celular') {
+      <div class="mk-cel-cab">
+        <app-pardo estado="saluda" [tamano]="34" />
+        <div>
+          <div class="mk-t">¡Hola, Sofía!</div>
+          <div class="mk-sub">Matemáticas · 6A</div>
+        </div>
+      </div>
+      <div class="mk-camino">
+        @for (t of temas; track t.nombre; let i = $index) {
+          <div class="mk-nodo" [class.mk-der]="i % 2 === 1" [class]="'mk-nodo-' + t.estado">
+            <div class="mk-bola">{{ i + 1 }}</div>
+            <div>
+              <div class="mk-nodo-nom">{{ t.nombre }}</div>
+              <div class="mk-estrellas">
+                @for (e of estrellas; track e) {
+                  <span [class.mk-on]="e <= t.estrellas">★</span>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="mk-boton">Seguir con Fracciones</div>
+    }
+
+    <!-- ESTUDIANTE (ESCRITORIO): MIS CURSOS Y MI PROGRESO -->
+    @case ('estudiante') {
+      <div class="mk-barra"><span class="mk-punto"></span><span class="mk-punto"></span><span class="mk-punto"></span></div>
+      <div class="mk-cuerpo mk-infantil">
+        <div class="mk-fila mk-entre">
+          <div class="mk-fila">
+            <app-pardo estado="celebra" [tamano]="46" />
+            <div>
+              <div class="mk-t">¡Vas muy bien, Sofía!</div>
+              <div class="mk-sub">Esta semana estudiaste 4 días</div>
+            </div>
+          </div>
+          <div class="mk-chip mk-amarillo">★ 18 estrellas</div>
+        </div>
+        <div class="mk-rejilla3">
+          <div class="mk-curso mk-azul"><div class="mk-curso-nom">Matemáticas</div><div class="mk-barrita"><span style="width:62%"></span></div><div class="mk-sub">Tema 2 de 4</div></div>
+          <div class="mk-curso mk-verde"><div class="mk-curso-nom">Ciencias naturales</div><div class="mk-barrita"><span style="width:40%"></span></div><div class="mk-sub">Tema 2 de 5</div></div>
+          <div class="mk-curso mk-coral"><div class="mk-curso-nom">Lenguaje</div><div class="mk-barrita"><span style="width:85%"></span></div><div class="mk-sub">Tema 4 de 5</div></div>
+        </div>
+        <div class="mk-caja">
+          <div class="mk-t2">Mi progreso · huellas del mes</div>
+          <div class="mk-huellas">
+            @for (h of [1,1,0,1,1,0,0,1,1,1,0,1,1,0,1,1,1,1,0,0,1]; track $index) {
+              <span [class.mk-on]="h === 1"></span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- PROFESOR: BANDEJA POR CALIFICAR -->
+    @case ('profesor') {
+      <div class="mk-barra"><span class="mk-punto"></span><span class="mk-punto"></span><span class="mk-punto"></span></div>
+      <div class="mk-app">
+        <div class="mk-lateral">
+          <div class="mk-logo">Vanessa</div>
+          <div class="mk-menu">Cursos</div>
+          <div class="mk-menu">Banco de preguntas</div>
+          <div class="mk-menu mk-activo">Por calificar <b>6</b></div>
+          <div class="mk-menu">Estadísticas</div>
+        </div>
+        <div class="mk-cuerpo">
+          <div class="mk-t">Por calificar</div>
+          <div class="mk-sub">Quiz · Lectura crítica 10A</div>
+          <div class="mk-caja">
+            <div class="mk-fila mk-entre"><b class="mk-t2">Valentina Ortiz</b><span class="mk-chip mk-amarillo">Pendiente</span></div>
+            <div class="mk-sub">¿Qué quiso decir el autor con «la ciudad despierta antes que sus habitantes»?</div>
+            <div class="mk-respuesta">Que el ruido de los buses y los vendedores empieza muy temprano, antes de que la gente…</div>
+            <div class="mk-fila mk-botones">
+              <span>0 %</span><span>25 %</span><span>50 %</span><span class="mk-sel">75 %</span><span>100 %</span>
+            </div>
+          </div>
+          <div class="mk-lista">
+            <div class="mk-fila mk-entre"><span>Juan Pablo Díaz</span><span class="mk-sub">2 escritas</span></div>
+            <div class="mk-fila mk-entre"><span>Mariana López</span><span class="mk-sub">1 escrita</span></div>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- COORDINACION: COMPARATIVOS Y SIMULACROS -->
+    @case ('coordinacion') {
+      <div class="mk-barra"><span class="mk-punto"></span><span class="mk-punto"></span><span class="mk-punto"></span></div>
+      <div class="mk-app">
+        <div class="mk-lateral">
+          <div class="mk-logo">Vanessa</div>
+          <div class="mk-menu">Colegio</div>
+          <div class="mk-menu">Matrículas</div>
+          <div class="mk-menu mk-activo">Estadísticas</div>
+          <div class="mk-menu">Simulacros Saber</div>
+          <div class="mk-menu">Alerta temprana <b>5</b></div>
+        </div>
+        <div class="mk-cuerpo">
+          <div class="mk-t">Comparativos por grado</div>
+          <div class="mk-graf">
+            @for (g of grados; track g.g) {
+              <div class="mk-col"><span [style.height.%]="g.v"></span><small>{{ g.g }}</small></div>
+            }
+          </div>
+          <div class="mk-caja">
+            <div class="mk-t2">Simulacros Saber 11 · global estimado</div>
+            <svg viewBox="0 0 200 60" class="mk-linea" preserveAspectRatio="none">
+              <polyline points="0,48 50,40 100,34 150,26 200,18" fill="none" stroke="var(--acento-morado)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              <polyline points="0,52 50,47 100,44 150,39 200,35" fill="none" stroke="var(--acento-azul)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="mk-fila"><span class="mk-chip mk-morado">11A</span><span class="mk-chip mk-azul">11B</span></div>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- ACUDIENTE: MIS HIJOS -->
+    @case ('acudiente') {
+      <div class="mk-barra"><span class="mk-punto"></span><span class="mk-punto"></span><span class="mk-punto"></span></div>
+      <div class="mk-cuerpo">
+        <div class="mk-fila mk-entre">
+          <div>
+            <div class="mk-t">Mis hijos</div>
+            <div class="mk-sub">Sofía Gómez · 6A</div>
+          </div>
+          <span class="mk-chip mk-verde">Todo va bien</span>
+        </div>
+        <div class="mk-caja">
+          <div class="mk-t2">Esta semana · 2 h 20 min</div>
+          <div class="mk-semana">
+            @for (d of semana; track $index) {
+              <div class="mk-dia"><span [style.height.%]="d.min * 2"></span><small>{{ d.dia }}</small></div>
+            }
+          </div>
+        </div>
+        <div class="mk-caja">
+          <div class="mk-fila mk-entre"><b class="mk-t2">Quiz · Fracciones</b><span class="mk-chip mk-azul">4.5 Superior</span></div>
+          <div class="mk-sub">Temas a repasar: suma con distinto denominador</div>
+        </div>
+      </div>
+    }
+
+    <!-- ESCRITORIO DE LA PORTADA: TABLERO DE COORDINACION -->
+    @default {
+      <div class="mk-barra"><span class="mk-punto"></span><span class="mk-punto"></span><span class="mk-punto"></span></div>
+      <div class="mk-app">
+        <div class="mk-lateral">
+          <div class="mk-logo">Vanessa</div>
+          <div class="mk-menu mk-activo">Inicio</div>
+          <div class="mk-menu">Cursos</div>
+          <div class="mk-menu">Estadísticas</div>
+          <div class="mk-menu">Alerta temprana</div>
+          <div class="mk-menu">Avisos</div>
+        </div>
+        <div class="mk-cuerpo">
+          <div class="mk-t">Buenos días, coordinación</div>
+          <div class="mk-rejilla3">
+            <div class="mk-kpi"><small>Avance promedio</small><b class="mk-c-azul">74 %</b></div>
+            <div class="mk-kpi"><small>Alertas nuevas</small><b class="mk-c-coral">5</b></div>
+            <div class="mk-kpi"><small>Simulacro 11°</small><b class="mk-c-morado">298</b></div>
+          </div>
+          <div class="mk-graf">
+            @for (g of grados; track g.g) {
+              <div class="mk-col"><span [style.height.%]="g.v"></span><small>{{ g.g }}</small></div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>

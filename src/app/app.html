@@ -1,0 +1,28 @@
+@if (contenido(); as c) {
+  <a class="saltar" href="#problema">{{ c.sitio.saltar }}</a>
+  <app-barra [c]="c" />
+  <main id="contenido">
+    <app-portada [c]="c" />
+    <app-problema [c]="c.problema" />
+    <app-libros [c]="c.libros" />
+    <app-recorrido [c]="c.recorrido" />
+    <app-modulos [c]="c.modulos" />
+    <app-demos [c]="c.demos" />
+    <app-video [c]="c.video" />
+    <app-comparativa [c]="c.comparativa" />
+    <app-seguridad [c]="c.seguridad" />
+    <app-empezamos [c]="c.empezamos" />
+    <app-faq [c]="c.faq" />
+  </main>
+  <app-cierre [c]="c" />
+  <app-guia [c]="c" />
+  <app-contacto-modal [c]="c.contacto" />
+} @else {
+  <!-- MIENTRAS CARGA EL CONTENIDO: PARDO LEE (SI FALLA, SE AVISA) -->
+  <div class="min-h-screen grid place-items-center text-center p-6">
+    <div>
+      <app-pardo [estado]="error() ? 'piensa' : 'lee'" [tamano]="140" />
+      <p class="font-titulo text-[22px] mt-4">{{ error() ? 'No se pudo cargar la página. Recarga en un momento.' : 'Cargando Vanessa…' }}</p>
+    </div>
+  </div>
+}

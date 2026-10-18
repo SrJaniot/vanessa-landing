@@ -1,0 +1,58 @@
+<section id="inicio" tabindex="-1" class="relative overflow-hidden pt-[104px] pb-10 sm:pb-16 bg-gradient-to-b from-[var(--cielo)] via-[var(--cielo)] to-papel">
+  <!-- DECORACION: SOL, NUBES Y UTILES (SOLO ADORNO) -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[var(--sol)] opacity-40 blur-[2px]"></div>
+    <svg class="decor absolute top-[120px] left-[4%] w-12 opacity-70" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z" fill="var(--acento-amarillo)" stroke="#C98A00" stroke-width="1.2" stroke-linejoin="round"/></svg>
+    <svg class="decor absolute top-[56%] left-[46%] w-10 opacity-60 hidden lg:block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="var(--acento-coral)"/></svg>
+    <svg class="decor absolute bottom-[18%] left-[2%] w-20 opacity-60 hidden sm:block" viewBox="0 0 100 30"><rect x="2" y="8" width="72" height="14" rx="3" fill="var(--acento-amarillo)" stroke="#7A4B12" stroke-width="2"/><path d="M74 8 L96 15 L74 22Z" fill="#FFE2B0" stroke="#7A4B12" stroke-width="2" stroke-linejoin="round"/><rect x="2" y="8" width="12" height="14" rx="3" fill="var(--acento-coral)" stroke="#7A4B12" stroke-width="2"/></svg>
+    <svg class="decor absolute top-[22%] right-[44%] w-16 opacity-70 hidden lg:block" viewBox="0 0 64 32"><path d="M14 28a10 10 0 0 1 2-19.8A14 14 0 0 1 42 8a10 10 0 0 1 8 20Z" fill="var(--hoja)"/></svg>
+  </div>
+
+  <div class="contenedor relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+    <div class="relative z-10 min-w-0">
+      <span data-intro class="etiqueta-seccion !bg-hoja !text-sello border-2 border-sello/20">{{ c.portada.etiqueta }}</span>
+      <h1 data-intro class="font-titulo font-semibold text-[clamp(2.25rem,8.8vw,4.4rem)] lg:text-[clamp(3rem,4.3vw,3.5rem)] leading-[1.02] tracking-[-.02em] mt-5">
+        {{ c.portada.titular }}<br><span class="resaltado relative z-0">{{ c.portada.titularResaltado }}</span>
+      </h1>
+      <p data-intro class="text-[18px] sm:text-[20px] text-grafito mt-6 max-w-[560px]">{{ c.portada.subtitulo }}</p>
+      <ul data-intro class="flex flex-wrap gap-2 mt-4 list-none p-0" aria-label="Roles">
+        @for (r of c.portada.roles; track r; let i = $index) {
+          <li class="chip border-2" [class]="['acento-azul','acento-morado','acento-verde','acento-amarillo','acento-coral'][i % 5]"
+            style="background: var(--a-suave); color: var(--a-fuerte); border-color: var(--a);">{{ r }}</li>
+        }
+      </ul>
+      <div data-intro class="flex flex-wrap gap-3 mt-8">
+        <button type="button" class="btn-primary text-[17px]" (click)="contacto.abrir()">
+          <app-icono nombre="whatsapp" [tamano]="20" /> {{ c.contacto.textoBoton }}
+        </button>
+        <a href="#problema" class="btn-secondary" (click)="irA('problema', $event)">{{ c.portada.ctaSecundario }} <app-icono nombre="abajo" [tamano]="18" /></a>
+      </div>
+      <p data-intro class="mt-3 text-[14px] font-bold text-grafito">{{ c.contacto.precio }}</p>
+      <dl data-intro class="grid grid-cols-3 gap-3 mt-8 max-w-[520px]">
+        @for (i of c.portada.insignias; track i.texto) {
+          <div class="rounded-2xl bg-hoja/80 border border-linea px-3 py-3">
+            <dt class="sr-only">{{ i.texto }}</dt>
+            <dd class="m-0">
+              <span class="block font-titulo font-semibold text-[clamp(1.4rem,4vw,2rem)] text-sello leading-none">{{ i.valor }}</span>
+              <span class="block text-[12.5px] sm:text-[13.5px] text-grafito mt-1 leading-tight">{{ i.texto }}</span>
+            </dd>
+          </div>
+        }
+      </dl>
+    </div>
+
+    <!-- VISUAL: PARDO, PORTATIL Y CELULAR -->
+    <div class="relative min-w-0 pt-36 sm:pt-40 [perspective:1200px]">
+      <div class="portada-pardo absolute z-20 left-0 sm:left-2 top-0 flex items-start gap-2">
+        <app-pardo estado="saluda" [tamano]="150" [mirar]="true" [vivo]="true" class="w-[112px] sm:w-[150px] [&>svg]:w-full [&>svg]:h-auto" />
+        <p class="portada-globo globo globo-izquierda text-[14.5px] sm:text-[16px] max-w-[230px] mt-2">{{ c.portada.globo }}</p>
+      </div>
+      <div class="portada-laptop relative ml-[4%] mr-[16%]">
+        <app-captura marco="laptop" mockup="escritorio" [archivo]="c.portada.mockup.capturaEscritorio" [alt]="c.portada.mockup.altEscritorio" />
+      </div>
+      <div class="portada-celular absolute right-0 bottom-[-10%] w-[28%] max-w-[180px] z-10">
+        <app-captura marco="celular" mockup="celular" [archivo]="c.portada.mockup.capturaCelular" [alt]="c.portada.mockup.altCelular" />
+      </div>
+    </div>
+  </div>
+</section>

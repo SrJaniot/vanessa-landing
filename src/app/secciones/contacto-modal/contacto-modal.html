@@ -1,0 +1,53 @@
+@if (contacto.abierto()) {
+  <div class="fixed inset-0 z-[80] grid place-items-center p-4 bg-[rgb(15_20_34/.55)] backdrop-blur-[2px]" (click)="cerrar()">
+    <div #dialogo role="dialog" aria-modal="true" aria-labelledby="contacto-titulo" (keydown)="atrapar($event)" (click)="$event.stopPropagation()"
+      class="card w-full max-w-[520px] max-h-[92vh] overflow-y-auto p-6 sm:p-7 animate-[entrar_.3s_ease-out]">
+      <div class="flex items-start gap-3">
+        <app-pardo estado="saluda" [tamano]="70" class="shrink-0" />
+        <div class="flex-1">
+          <h2 id="contacto-titulo" class="text-[26px]">{{ c.modal.titulo }}</h2>
+          <p class="text-grafito mt-1 mb-0 text-[15px]">{{ c.modal.texto }}</p>
+        </div>
+        <button type="button" (click)="cerrar()" class="w-11 h-11 grid place-items-center rounded-xl border-2 border-linea text-tinta hover:border-sello cursor-pointer shrink-0" [attr.aria-label]="c.modal.cerrar">
+          <app-icono nombre="cerrar" [tamano]="20" />
+        </button>
+      </div>
+      <form class="grid gap-4 mt-5" (submit)="$event.preventDefault()">
+        <div>
+          <label class="label-field" for="ct-nombre">{{ c.modal.campoNombre }}</label>
+          <input id="ct-nombre" name="nombre" class="input-field" [(ngModel)]="nombre" [placeholder]="c.modal.campoNombreEjemplo" autocomplete="name" maxlength="80">
+        </div>
+        <div class="grid sm:grid-cols-[1.4fr_1fr] gap-4">
+          <div>
+            <label class="label-field" for="ct-colegio">{{ c.modal.campoColegio }}</label>
+            <input id="ct-colegio" name="colegio" class="input-field" [(ngModel)]="colegio" [placeholder]="c.modal.campoColegioEjemplo" autocomplete="organization" maxlength="100">
+          </div>
+          <div>
+            <label class="label-field" for="ct-estudiantes">{{ c.modal.campoEstudiantes }}</label>
+            <input id="ct-estudiantes" name="estudiantes" class="input-field" type="number" inputmode="numeric" min="1" max="20000" [(ngModel)]="estudiantes" [placeholder]="c.modal.campoEstudiantesEjemplo">
+          </div>
+        </div>
+        <div>
+          <p class="label-field">{{ c.modal.vistaPrevia }}</p>
+          <p class="m-0 rounded-2xl bg-[#DCF8C6] text-[#1F2A44] px-4 py-3 text-[15px] leading-snug">{{ mensaje }}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 [&_.btn-primary]:whitespace-nowrap [&_.btn-secondary]:whitespace-nowrap [&_a]:!px-4 [&_button]:!px-4">
+          @if (whatsappValido) {
+            <a class="btn-primary" [href]="enlaceWhatsapp" target="_blank" rel="noopener"><app-icono nombre="whatsapp" [tamano]="20" /> {{ c.modal.botonWhatsapp }}</a>
+          } @else {
+            <button type="button" class="btn-primary" disabled aria-describedby="ct-pendiente"><app-icono nombre="whatsapp" [tamano]="20" /> {{ c.modal.botonWhatsapp }}</button>
+          }
+          @if (correoValido) {
+            <a class="btn-secondary" [href]="enlaceCorreo"><app-icono nombre="correo" [tamano]="20" /> {{ c.modal.botonCorreo }}</a>
+          } @else {
+            <button type="button" class="btn-secondary" disabled aria-describedby="ct-pendiente"><app-icono nombre="correo" [tamano]="20" /> {{ c.modal.botonCorreo }}</button>
+          }
+        </div>
+        @if (!whatsappValido || !correoValido) {
+          <p id="ct-pendiente" class="m-0 text-[13.5px] text-grafito">{{ c.modal.notaPendiente }}</p>
+        }
+        <p class="m-0 text-[13.5px] font-bold text-grafito">{{ c.precio }}</p>
+      </form>
+    </div>
+  </div>
+}

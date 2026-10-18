@@ -1,0 +1,126 @@
+<section id="demos" tabindex="-1" class="seccion">
+  <div class="contenedor">
+    <div class="text-center max-w-[760px] mx-auto">
+      <span data-aparecer class="etiqueta-seccion">{{ c.etiqueta }}</span>
+      <h2 data-aparecer class="titulo-seccion">{{ c.titulo }}</h2>
+      <p data-aparecer class="texto-seccion mx-auto">{{ c.texto }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+
+      <!-- 1. EL ESTUDIANTE RESPONDE Y PARDO CELEBRA -->
+      <article data-aparecer class="card p-6 sm:p-7 relative overflow-hidden fondo-patron">
+        <h3 class="text-[22px]">{{ c.pregunta.titulo }}</h3>
+        <p class="chip bg-sello-suave text-sello mt-3">{{ c.pregunta.contexto }}</p>
+        <div #confeti class="pointer-events-none absolute inset-0 z-20" aria-hidden="true"></div>
+        <div class="flex items-start gap-3 mt-4">
+          <app-pardo [estado]="estadoPardo()" [tamano]="96" class="shrink-0" />
+          <p class="globo globo-izquierda text-[15px] mt-2" aria-live="polite">
+            @switch (resultado()) {
+              @case ('bien') { {{ c.pregunta.bien }} }
+              @case ('mal') { {{ c.pregunta.mal }} }
+              @default { {{ c.pregunta.inicio }} }
+            }
+          </p>
+        </div>
+        <p class="font-titulo font-semibold text-[20px] mt-5 mb-0">{{ c.pregunta.enunciado }}</p>
+        <div class="grid grid-cols-2 gap-3 mt-4" role="group" [attr.aria-label]="c.pregunta.enunciado">
+          @for (o of c.pregunta.opciones; track o; let i = $index) {
+            <button type="button" (click)="responder(i)" [disabled]="resultado() === 'bien'"
+              class="min-h-[60px] rounded-2xl border-[3px] font-titulo font-semibold text-[24px] transition-all duration-200 cursor-pointer disabled:cursor-default"
+              [class]="elegida() === i
+                ? (resultado() === 'bien' ? 'bg-acento-verde-suave border-acento-verde text-acento-verde-fuerte scale-105' : 'bg-acento-coral-suave border-acento-coral text-acento-coral-fuerte animate-[sacudir_.4s]')
+                : 'bg-hoja border-linea text-tinta hover:border-sello hover:-translate-y-0.5'">
+              {{ o }}
+            </button>
+          }
+        </div>
+        @if (resultado() === 'bien') {
+          <div class="flex items-center justify-between mt-4">
+            <span class="chip bg-acento-amarillo-suave text-acento-amarillo-fuerte"><app-icono nombre="estrella" [tamano]="16" /> +1</span>
+            <button type="button" class="btn-secondary !min-h-[44px]" (click)="reiniciarPregunta()">{{ c.pregunta.otraVez }}</button>
+          </div>
+        }
+      </article>
+
+      <!-- 2. TABLERO QUE SE LLENA SOLO -->
+      <article data-aparecer class="demo-tablero card p-6 sm:p-7">
+        <h3 class="text-[22px]">{{ c.tablero.titulo }}</h3>
+        <p class="text-grafito mt-1 mb-0">{{ c.tablero.subtitulo }}</p>
+        <ul class="mt-6 grid gap-4 list-none p-0">
+          @for (b of c.tablero.barras; track b.grupo; let i = $index) {
+            <li class="grid grid-cols-[48px_1fr_52px] items-center gap-3">
+              <span class="font-extrabold">{{ b.grupo }}</span>
+              <span class="h-7 rounded-full bg-linea overflow-hidden">
+                <span class="demo-barra block h-full rounded-full" [style.width.%]="b.valor"
+                  [style.background]="b.valor >= 80 ? 'var(--acento-verde)' : b.valor >= 60 ? 'var(--acento-azul)' : 'var(--acento-amarillo)'"></span>
+              </span>
+              <span class="font-titulo font-semibold text-[20px] text-right">{{ b.valor }} %</span>
+            </li>
+          }
+        </ul>
+        <div class="mt-6 flex items-center gap-3 rounded-2xl p-3 bg-acento-amarillo-suave text-acento-amarillo-fuerte text-[14px] font-bold">
+          <app-icono nombre="alerta" [tamano]="20" /> {{ c.tablero.aviso }}
+        </div>
+        <p class="text-[12.5px] text-grafito mt-3 mb-0">{{ c.tablero.nota }}</p>
+      </article>
+
+      <!-- 3. ALERTA CON SEGUIMIENTO -->
+      <article data-aparecer class="card p-6 sm:p-7">
+        <h3 class="text-[22px]">{{ c.alerta.titulo }}</h3>
+        <ol class="flex items-center gap-2 mt-5 list-none p-0" aria-label="Estados">
+          @for (e of c.alerta.estados; track e; let i = $index) {
+            <li class="flex items-center gap-2 flex-1 min-w-0">
+              <span class="w-8 h-8 rounded-full grid place-items-center font-black text-[14px] shrink-0 transition-colors duration-300"
+                [class]="i <= pasoAlerta() ? 'bg-sello text-sobre-tinta' : 'bg-linea text-grafito'">{{ i + 1 }}</span>
+              <span class="text-[13px] font-bold truncate" [class.text-sello]="i === pasoAlerta()">{{ e }}</span>
+            </li>
+          }
+        </ol>
+        <div class="mt-5 rounded-2xl border-2 p-4 transition-colors duration-500"
+          [class]="pasoAlerta() === 0 ? 'border-acento-coral bg-acento-coral-suave' : pasoAlerta() === 1 ? 'border-acento-amarillo bg-acento-amarillo-suave' : 'border-acento-verde bg-acento-verde-suave'">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <b class="text-[17px]">{{ c.alerta.estudiante }}</b>
+            <span class="chip bg-hoja" aria-live="polite"
+              [class]="pasoAlerta() === 0 ? 'text-acento-coral-fuerte' : pasoAlerta() === 1 ? 'text-acento-amarillo-fuerte' : 'text-acento-verde-fuerte'">{{ c.alerta.estados[pasoAlerta()] }}</span>
+          </div>
+          <p class="m-0 mt-1 text-grafito">{{ c.alerta.motivo }}</p>
+          @if (c.alerta.notas[pasoAlerta()]) {
+            <p class="m-0 mt-3 text-[14.5px] bg-hoja rounded-xl p-3 border border-linea">{{ c.alerta.notas[pasoAlerta()] }}</p>
+          }
+        </div>
+        <button type="button" class="btn-primary mt-5" (click)="avanzarAlerta()">{{ c.alerta.acciones[pasoAlerta()] }}</button>
+      </article>
+
+      <!-- 4. EL CELULAR DEL ACUDIENTE RECIBE EL RESUMEN -->
+      <article data-aparecer class="card p-6 sm:p-7 flex flex-col sm:flex-row gap-6 items-center">
+        <div class="flex-1">
+          <h3 class="text-[22px]">{{ c.whatsapp.titulo }}</h3>
+          <p class="text-grafito mt-2">{{ c.whatsapp.nota }}</p>
+          <button type="button" class="btn-secondary mt-2" (click)="enviarMensaje()">{{ c.whatsapp.otraVez }}</button>
+        </div>
+        <div #telefono class="w-[230px] shrink-0 rounded-[30px] border-[7px] border-[#1F2A44] bg-[#ECE5DD] overflow-hidden shadow-[0_24px_40px_-24px_rgb(31_42_68/.7)]" role="img" [attr.aria-label]="c.whatsapp.titulo + ': ' + c.whatsapp.mensaje">
+          <div class="bg-[#075E54] text-white px-3 py-2.5 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-white grid place-items-center overflow-hidden"><app-pardo [cara]="true" [tamano]="26" /></span>
+            <span class="leading-tight"><b class="block text-[13px]">{{ c.whatsapp.contacto }}</b><small class="text-[11px] opacity-80">{{ chat() === 'escribiendo' ? c.whatsapp.escribiendo : c.whatsapp.estadoContacto }}</small></span>
+          </div>
+          <div class="min-h-[300px] p-3 flex flex-col justify-end" aria-hidden="true">
+            @if (chat() === 'escribiendo') {
+              <div class="self-start bg-white rounded-xl rounded-tl-sm px-3 py-2.5 flex gap-1">
+                <span class="w-2 h-2 rounded-full bg-[#9AA] animate-bounce"></span>
+                <span class="w-2 h-2 rounded-full bg-[#9AA] animate-bounce [animation-delay:.15s]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#9AA] animate-bounce [animation-delay:.3s]"></span>
+              </div>
+            }
+            @if (chat() === 'recibido') {
+              <div class="self-start max-w-[94%] bg-white text-[#1F2A44] rounded-xl rounded-tl-sm px-3 py-2 text-[12.5px] leading-snug shadow-sm animate-[entrar_.45s_ease-out]">
+                {{ c.whatsapp.mensaje }}
+                <span class="block text-right text-[10px] text-[#8696A0] mt-1">{{ c.whatsapp.hora }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
