@@ -20,6 +20,8 @@
   const V = new URLSearchParams(location.search).get('formato') === 'vertical';
   const ANCHO = V ? 1080 : 1920, ALTO = V ? 1920 : 1080;
   const L = (h, v) => V ? v : h;
+  // VERSION S3MEDIA (?marca=s3media): SOLO CAMBIA EL WHATSAPP DEL CIERRE Y AGREGA SU LOGO. LOS TIEMPOS Y LOS SONIDOS SON LOS MISMOS
+  const S3 = new URLSearchParams(location.search).get('marca') === 's3media';
   // EN VERTICAL PARDO VA ABAJO A LA DERECHA Y SU GLOBO A SU IZQUIERDA (COLA A LA DERECHA), SALVO DONDE SE INDICA
   const BANDA = { der: 700, y: 1440, cola: 'der', ancho: 620 };
 
@@ -661,7 +663,7 @@
   const boton = crear(e7, `<div class="abs titulo" style="${L('left:155px', 'left:0;right:0;margin:0 auto;width:fit-content')};top:${BOT.y}px;padding:28px 50px;border-radius:26px;background:${C.sello};color:#fff;font-size:50px;box-shadow:0 10px 0 #12498F, 0 24px 40px -16px rgb(27 102 201 / .7)">Agenda una demostración</div>`);
   pop(corte7 + 2.0, boton, { desde: .4 });
   const contactos = [
-    ['#2FAE6B', '<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>', 'WhatsApp 305 229 5353'],
+    ['#2FAE6B', '<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>', S3 ? 'WhatsApp 313 478 8263' : 'WhatsApp 305 229 5353'],
     ['#FF6F59', '<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/><path d="m3 7 9 6 9-6" fill="none" stroke="#fff" stroke-width="2.2"/>', 'estebanjaniot10@gmail.com'],
     ['#2F7FE0', '<circle cx="12" cy="12" r="9" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="#fff" stroke-width="2"/>', 'srjaniot.github.io/vanessa-landing'],
   ].map(([col, ico, txt], i) => {
@@ -670,6 +672,11 @@
     evento(corte7 + 3.4 + i * .2, 'pop', { v: .6 });
     return el;
   });
+  if (S3) {
+    const LOGO = L({ x: 160, y: 950, w: 290 }, { x: 110, y: 1135, w: 280 });
+    const s3 = crear(e7, `<div class="abs texto" style="left:${LOGO.x}px;top:${LOGO.y}px;display:flex;align-items:center;gap:18px;font-size:${L(26, 30)}px;font-weight:800;color:${C.grafito};white-space:nowrap">Una solución de<img src="capturas/s3media.png" alt="S3Media" style="width:${LOGO.w}px;border-radius:22px;box-shadow:0 14px 28px -14px rgb(9 18 35 / .7)"></div>`);
+    tl.fromTo(s3, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'back.out(1.6)', immediateRender: false }, corte7 + 4.2); gsap.set(s3, { opacity: 0 });
+  }
   salto(corte7 + .9, L(1300, 670), L(680, 1220), 1.4, { dur: .85, alto: 240 });
   { const bx = BOT.cx, by = BOT.y + 62; cursorMostrar(corte7 + 2.4, L(900, 820), L(1000, 1250)); cursorA(corte7 + 2.5, bx + 120, by, .6); clic(corte7 + 3.15, bx + 120, by); tl.to(boton, { keyframes: [{ scale: .95, duration: .08 }, { scale: 1, duration: .35, ease: 'elastic.out(1,.4)' }] }, corte7 + 3.15); destellos(corte7 + 3.2, bx + 120, by, { n: 12, radio: 220, sonido: false }); cursorOcultar(corte7 + 3.6); }
   pose(corte7 + 3.2, 'celebra'); celebrar(corte7 + 3.25, 6); confeti(corte7 + 3.2, L(1510, 820), L(300, 1100), { n: 120, fuerza: 900, ancho: L(600, 420) });

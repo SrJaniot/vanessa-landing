@@ -3,7 +3,8 @@
 #      py armar.py --vertical   (VERSION PARA CELULAR: ANTES node render.mjs video 60 --vertical; USA LA MISMA MEZCLA DE AUDIO)
 import json, os, re, subprocess, sys
 VERTICAL = '--vertical' in sys.argv
-SUF = '-vertical' if VERTICAL else ''
+S3 = '--s3media' in sys.argv   # VERSION CON EL WHATSAPP Y EL LOGO DE S3MEDIA (ANTES node render.mjs video 60 --s3media [--vertical])
+SUF = ('-s3media' if S3 else '') + ('-vertical' if VERTICAL else '')
 AQUI = os.path.dirname(os.path.abspath(__file__))
 SAL = os.path.join(AQUI, 'salida')
 DEST = os.path.normpath(os.path.join(AQUI, '..', 'revision', 'motion'))

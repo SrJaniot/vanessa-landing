@@ -29,14 +29,16 @@ const servidor = http.createServer((req, res) => {
 await new Promise(r => servidor.listen(4710, '127.0.0.1', r));
 
 const VERTICAL = process.argv.includes('--vertical');
-const ARGS = process.argv.filter(a => a !== '--vertical');
+// CON --s3media SE RENDERIZA LA VERSION CON EL WHATSAPP Y EL LOGO DE S3MEDIA (index.html?marca=s3media); LOS ARCHIVOS LLEVAN -s3media
+const S3 = process.argv.includes('--s3media');
+const ARGS = process.argv.filter(a => a !== '--vertical' && a !== '--s3media');
 const [AN, AL] = VERTICAL ? [1080, 1920] : [1920, 1080];
-const SUF = VERTICAL ? '-vertical' : '';
+const SUF = (S3 ? '-s3media' : '') + (VERTICAL ? '-vertical' : '');
 const modo = ARGS[2] ?? 'eventos';
 const e = await abrirEdge({ puerto: 9350, perfil: path.join(SALIDA, 'perfil-edge'), args: [`--window-size=${AN},${AL}`, '--force-device-scale-factor=1', '--disable-gpu-vsync', '--run-all-compositor-stages-before-draw'] });
 try {
   await e.cdp('Emulation.setDeviceMetricsOverride', { width: AN, height: AL, deviceScaleFactor: 1, mobile: false });
-  await e.cdp('Page.navigate', { url: 'http://127.0.0.1:4710/motion/escena/index.html' + (VERTICAL ? '?formato=vertical' : '') });
+  await e.cdp('Page.navigate', { url: 'http://127.0.0.1:4710/motion/escena/index.html?' + [VERTICAL && 'formato=vertical', S3 && 'marca=s3media'].filter(Boolean).join('&') });
   const ok = await e.hasta('window.__listo === true || !!window.__error', 30000);
   const error = await e.ev('window.__error || null');
   if (!ok || error) throw new Error('LA ESCENA NO CARGO: ' + error);

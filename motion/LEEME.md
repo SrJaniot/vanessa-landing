@@ -41,6 +41,17 @@ py armar.py --vertical               # ../revision/motion/pardo-presenta-vertica
 - En vertical los globos van a 46 px y las píldoras, las fuentes y las notas de demo un poco más grandes (`html.vertical` en `estilos.css`).
 - Revisar sin renderizar todo: `node render.mjs fotos 12 30.5 --vertical` (en `salida/fotos-vertical/`) o `node render.mjs mosaico 3 --vertical` y `py herramientas/mosaico.py salida/mosaico-vertical salida/mosaico-vertical.jpg 9 216`.
 
+### Versión S3Media (19/10/2026)
+
+Es el mismo video con dos cambios en el cierre: el WhatsApp pasa a 313 478 8263 y aparece «Una solución de» con el logo de S3Media (`escena/capturas/s3media.png`). Se activa con `index.html?marca=s3media`. Los tiempos y los sonidos no cambian, así que usa la misma mezcla. No reemplaza al video de la landing: se entrega aparte.
+
+```
+node render.mjs video 60 --s3media              # salida/video-sin-audio-s3media.mp4
+py armar.py --s3media                           # ../revision/motion/pardo-presenta-s3media.mp4
+node render.mjs video 60 --s3media --vertical   # salida/video-sin-audio-s3media-vertical.mp4
+py armar.py --s3media --vertical                # ../revision/motion/pardo-presenta-s3media-vertical.mp4
+```
+
 ### Revisión
 
 - Para revisar sin renderizar todo: `node render.mjs fotos 12 30.5` (cuadros sueltos en `salida/fotos/`) o `node render.mjs mosaico 3` (un cuadro cada 3 s) y luego `py herramientas/mosaico.py salida/mosaico salida/mosaico.jpg`.

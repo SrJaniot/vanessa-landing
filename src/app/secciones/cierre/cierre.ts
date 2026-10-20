@@ -26,7 +26,7 @@ import { SeccionBase } from '../seccion-base';
         </div>
         <p data-aparecer class="mt-4 font-bold text-grafito">{{ c.contacto.precio }}</p>
       </div>
-      <footer class="contenedor mt-20 pt-8 border-t border-tinta/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[14px] text-grafito">
+      <footer class="contenedor mt-20 mb-28 pt-8 border-t border-tinta/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[14px] text-grafito">
         <div class="flex items-center gap-3 text-center sm:text-left">
           <app-pardo [cara]="true" [tamano]="40" />
           <div>
@@ -34,6 +34,12 @@ import { SeccionBase } from '../seccion-base';
             <p class="m-0">{{ c.pie.subtexto }}</p>
           </div>
         </div>
+        @if (c.pie.marca; as m) {
+          <div class="flex items-center gap-3">
+            <span class="font-bold">{{ m.texto }}</span>
+            <img [src]="m.logo" [alt]="m.alt" width="168" height="66" loading="lazy" class="h-[66px] w-auto rounded-2xl shadow-[0_10px_24px_-14px_rgb(9_18_35/.7)]">
+          </div>
+        }
         <a href="#inicio" class="inline-flex items-center gap-1.5 font-bold text-sello" (click)="arriba($event)"><app-icono nombre="arriba" [tamano]="16" /> {{ c.pie.arriba }}</a>
       </footer>
     </section>
