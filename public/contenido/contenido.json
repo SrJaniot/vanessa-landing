@@ -868,6 +868,6 @@
     "texto": "Vanessa · Plataforma escolar para colegios colombianos",
     "subtexto": "Con Pardo, un cachorro de leopardo inspirado en «Los Leopardos» de Bucaramanga.",
     "arriba": "Volver arriba",
-    "marca": { "texto": "Una solución de", "logo": "marcas/s3media.png", "alt": "S3Media" }
+    "marca": { "autor": "Esteban Janiot", "texto": "en colaboración con", "logo": "marcas/s3media.png", "alt": "S3Media" }
   }
 }

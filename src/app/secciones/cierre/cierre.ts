@@ -36,7 +36,10 @@ import { SeccionBase } from '../seccion-base';
         </div>
         @if (c.pie.marca; as m) {
           <div class="flex items-center gap-3">
-            <span class="font-bold">{{ m.texto }}</span>
+            <div class="text-right leading-snug">
+              <p class="m-0">Desarrollada por <b class="text-tinta whitespace-nowrap">{{ m.autor }}</b></p>
+              <p class="m-0">{{ m.texto }}</p>
+            </div>
             <img [src]="m.logo" [alt]="m.alt" width="168" height="66" loading="lazy" class="h-[66px] w-auto rounded-2xl shadow-[0_10px_24px_-14px_rgb(9_18_35/.7)]">
           </div>
         }

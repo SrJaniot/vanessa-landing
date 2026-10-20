@@ -94,7 +94,7 @@ export interface Contenido {
   empezamos: { etiqueta: string; titulo: string; texto: string; pasos: { titulo: string; texto: string }[] };
   faq: { etiqueta: string; titulo: string; items: { pregunta: string; respuesta: string; fuentes?: Fuente[] }[] };
   cierre: { titulo: string; texto: string; globo: string };
-  pie: { texto: string; subtexto: string; arriba: string; marca?: { texto: string; logo: string; alt: string } };
+  pie: { texto: string; subtexto: string; arriba: string; marca?: { autor: string; texto: string; logo: string; alt: string } };
 }
 
 export interface ModuloLanding {
