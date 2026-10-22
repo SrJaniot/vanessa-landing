@@ -1,0 +1,897 @@
+{
+  "sitio": {
+    "marca": "Vanessa",
+    "lema": "La plataforma escolar hecha para Colombia",
+    "saltar": "Saltar al contenido"
+  },
+  "contacto": {
+    "whatsapp": "573052295353",
+    "correo": "estebanjaniot10@gmail.com",
+    "textoBoton": "Agenda una demostración",
+    "textoCorreo": "Escríbenos un correo",
+    "asuntoCorreo": "Quiero conocer Vanessa",
+    "mensajePlantilla": "Hola, soy {nombre} del colegio {colegio} con {estudiantes} estudiantes, quiero conocer Vanessa.",
+    "precio": "Cotización según el tamaño del colegio",
+    "modal": {
+      "titulo": "Agenda una demostración",
+      "texto": "Cuéntanos de tu colegio y te escribimos para mostrarte Vanessa en vivo, con ejemplos de tus grados.",
+      "campoNombre": "Tu nombre",
+      "campoNombreEjemplo": "Ej.: Marta Gómez, coordinadora académica",
+      "campoColegio": "Colegio",
+      "campoColegioEjemplo": "Ej.: Colegio San Pedro",
+      "campoEstudiantes": "Número de estudiantes",
+      "campoEstudiantesEjemplo": "Ej.: 650",
+      "vistaPrevia": "Así te llega el mensaje:",
+      "botonWhatsapp": "Enviar por WhatsApp",
+      "botonCorreo": "Enviar por correo",
+      "notaPendiente": "El número y el correo de contacto se publican pronto.",
+      "cerrar": "Cerrar"
+    }
+  },
+  "nav": {
+    "enlaces": [
+      {
+        "texto": "El problema",
+        "ancla": "problema"
+      },
+      {
+        "texto": "Sin libros",
+        "ancla": "libros"
+      },
+      {
+        "texto": "Por rol",
+        "ancla": "recorrido"
+      },
+      {
+        "texto": "Módulos",
+        "ancla": "modulos"
+      },
+      {
+        "texto": "Pruébalo",
+        "ancla": "demos"
+      },
+      {
+        "texto": "Preguntas",
+        "ancla": "preguntas"
+      },
+      {
+        "texto": "Asesoría",
+        "ancla": "asesoria"
+      }
+    ],
+    "menu": "Menú",
+    "temaOscuro": "Activar modo oscuro",
+    "temaClaro": "Activar modo claro"
+  },
+  "guia": {
+    "nombre": "Pardo",
+    "ocultar": "Ocultar a Pardo",
+    "mostrar": "Mostrar a Pardo",
+    "mensajes": {
+      "portada": {
+        "estado": "saluda",
+        "texto": "¡Hola! Soy Pardo, el leopardo de Vanessa. Te acompaño en el recorrido."
+      },
+      "problema": {
+        "estado": "piensa",
+        "texto": "Esto pasa en muchos colegios. ¿Te suena alguno?"
+      },
+      "libros": {
+        "estado": "lee",
+        "texto": "Cambia los valores de la calculadora por los de tu colegio."
+      },
+      "recorrido": {
+        "estado": "anima",
+        "texto": "Elige un rol y te muestro lo que ve cada persona."
+      },
+      "modulos": {
+        "estado": "piensa",
+        "texto": "Toca cualquier tarjeta para ver el detalle del módulo."
+      },
+      "demos": {
+        "estado": "anima",
+        "texto": "¡Pruébalo tú! Responde la pregunta y mira lo que pasa."
+      },
+      "video": {
+        "estado": "lee",
+        "texto": "¡Mírame en video! Te presento Vanessa en un minuto."
+      },
+      "comparativa": {
+        "estado": "piensa",
+        "texto": "Así se compara Vanessa con lo que hay hoy."
+      },
+      "seguridad": {
+        "estado": "lee",
+        "texto": "Los datos de los niños se cuidan desde el diseño."
+      },
+      "empezamos": {
+        "estado": "anima",
+        "texto": "Empezar es más fácil de lo que parece. ¡Yo te acompaño!"
+      },
+      "preguntas": {
+        "estado": "piensa",
+        "texto": "¿Tienes una duda? Seguro está aquí."
+      },
+      "asesoria": {
+        "estado": "saluda",
+        "texto": "¿Hablamos? Un asesor te ayuda sin compromiso."
+      },
+      "cierre": {
+        "estado": "celebra",
+        "texto": "¡Me encantaría conocer tu colegio!"
+      }
+    }
+  },
+  "portada": {
+    "etiqueta": "Para colegios de Transición a 11°",
+    "titular": "La plataforma escolar",
+    "titularResaltado": "hecha para Colombia",
+    "subtitulo": "Cursos por temas, evaluaciones, simulacros Saber, alerta temprana y el portal del acudiente en un solo lugar. Cada quien ve lo suyo:",
+    "roles": [
+      "Rectoría",
+      "Coordinación",
+      "Profesores",
+      "Estudiantes",
+      "Acudientes"
+    ],
+    "globo": "¡Hola! Soy Pardo. Acompaño a los estudiantes en cada tema.",
+    "ctaSecundario": "Ver cómo funciona",
+    "insignias": [
+      {
+        "valor": "12",
+        "texto": "grados, de Transición a 11°"
+      },
+      {
+        "valor": "5",
+        "texto": "roles con su propia vista"
+      },
+      {
+        "valor": "0–500",
+        "texto": "puntaje Saber 11 estimado"
+      }
+    ],
+    "mockup": {
+      "capturaEscritorio": "capturas/portada-escritorio.png",
+      "altEscritorio": "Tablero de coordinación de Vanessa con el avance por grupo",
+      "capturaCelular": "capturas/portada-celular.png",
+      "altCelular": "Camino de temas del estudiante en el celular"
+    }
+  },
+  "problema": {
+    "etiqueta": "El problema",
+    "titulo": "Lo que pasa hoy en muchos colegios",
+    "texto": "No es falta de compromiso: es que la información está regada y llega tarde.",
+    "notaCifras": "Cada cifra tiene su fuente. Las que vienen de un colegio o de otro país se presentan como ejemplo, no como promedio nacional.",
+    "pendiente": "Cifra pendiente",
+    "fuente": "Fuente",
+    "items": [
+      {
+        "icono": "libro",
+        "color": "coral",
+        "titulo": "Libros costosos que no siempre se terminan",
+        "texto": "Las familias pagan el paquete completo. ¿Y cuánto del libro alcanzó a ver cada curso el año pasado?",
+        "cifra": {
+          "valor": 976300,
+          "prefijo": "$",
+          "sufijo": "",
+          "decimales": 0,
+          "descripcion": "paquete de 15 textos de primaria por estudiante en un colegio de Bucaramanga, 2026 (ejemplo, no promedio)",
+          "fuente": "https://www.comfenalcosantander.com.co/wp-content/uploads/2026/01/Circular-004-Libros-de-texto-Bucaramanga-2026.pdf",
+          "fuenteNombre": "Circular 004 de 2026, Comfenalco Santander"
+        }
+      },
+      {
+        "icono": "maleta",
+        "color": "amarillo",
+        "titulo": "Maletas pesadas",
+        "texto": "Niños cargando cada día libros que casi no se abren, en maletas que pesan más de lo que deberían.",
+        "cifra": {
+          "valor": 50,
+          "prefijo": "",
+          "sufijo": " %",
+          "decimales": 0,
+          "descripcion": "de los estudiantes lleva una maleta de más del 15 % de su peso, según un estudio de la Universidad CES reportado en 2025",
+          "fuente": "https://www.eluniversal.com.co/especial/salud/2025/02/04/cuidado-los-morrales-escolares-pueden-afectar-la-salud-de-los-estudiantes/",
+          "fuenteNombre": "El Universal, febrero de 2025"
+        }
+      },
+      {
+        "icono": "familia",
+        "color": "azul",
+        "titulo": "Padres que se enteran tarde",
+        "texto": "Se enteran en la entrega de notas, cuando ya no hay mucho por hacer. Estar informados a tiempo sí cambia las cosas.",
+        "cifra": {
+          "valor": 27,
+          "prefijo": "−",
+          "sufijo": " %",
+          "decimales": 0,
+          "descripcion": "de materias perdidas cuando las familias recibieron avisos semanales (experimento en 22 colegios de EE. UU.)",
+          "fuente": "https://jhr.uwpress.org/content/56/1/125",
+          "fuenteNombre": "Bergman y Chan, Journal of Human Resources, 2021"
+        }
+      },
+      {
+        "icono": "saber",
+        "color": "morado",
+        "titulo": "Preparación Saber costosa y desigual",
+        "texto": "El preicfes externo lo pagan unos pocos; los demás llegan a la prueba sin haber practicado.",
+        "cifra": {
+          "valor": 31,
+          "prefijo": "",
+          "sufijo": " puntos",
+          "decimales": 0,
+          "descripcion": "de diferencia en el global Saber 11 de 2025 entre colegios privados (281) y oficiales (250)",
+          "fuente": "https://www.portafolio.co/tendencias/pruebas-saber-11-15-000-estudiantes-de-estratos-bajos-dejaron-de-presentar-el-examen-en-un-ano-494360",
+          "fuenteNombre": "Fundación Empresarios por la Educación, vía Portafolio, 2026"
+        }
+      },
+      {
+        "icono": "hojas",
+        "color": "verde",
+        "titulo": "Profesores con Excel sueltos",
+        "texto": "Cada profesor lleva sus notas a su manera y coordinación no tiene la foto completa del colegio.",
+        "pregunta": "¿Dónde está hoy la nota de cada estudiante en cada asignatura?"
+      },
+      {
+        "icono": "alerta",
+        "color": "coral",
+        "titulo": "Estudiantes que se pierden sin que nadie lo note",
+        "texto": "Cuando la alarma suena en el boletín, el período ya se perdió. En secundaria la cifra llegó a 4,16 %.",
+        "cifra": {
+          "valor": 3.44,
+          "prefijo": "",
+          "sufijo": " %",
+          "decimales": 2,
+          "descripcion": "de los estudiantes de Transición a 11° abandonó el colegio durante el año 2024",
+          "fuente": "https://portalsineb.mineducacion.gov.co/1782/articles-412165_Trayectoria_03_V2024.pdf",
+          "fuenteNombre": "MEN, Sineb (SIMAT), 2024"
+        }
+      }
+    ]
+  },
+  "libros": {
+    "etiqueta": "Contenido propio del colegio",
+    "titulo": "Los libros pueden quedar atrás",
+    "texto": "Los textos del colegio, hechos por sus docentes y suyos para siempre. El contenido de cada asignatura vive en Vanessa, por temas y con fechas, y se reutiliza cada año sin pagar por estudiante. El colegio decide si reduce o reemplaza los textos: es una opción que ahorra, no una obligación.",
+    "puntos": [
+      "El profesor arma su curso una vez, por temas y lecciones con 14 tipos de bloque, y lo publica a sus grupos.",
+      "Cada tema se abre libre, en orden o en su fecha: el curso avanza al ritmo del plan de estudios.",
+      "Coordinación ve en qué tema va cada grupo y qué falta para terminar."
+    ],
+    "calculadora": {
+      "titulo": "Calcula el ahorro de tu colegio",
+      "etiquetaEstudiantes": "Estudiantes",
+      "estudiantesPorDefecto": 600,
+      "etiquetaCosto": "Costo de los textos por estudiante al año (COP)",
+      "costoPorDefecto": {
+        "valor": 976300,
+        "fuente": "https://www.comfenalcosantander.com.co/wp-content/uploads/2026/01/Circular-004-Libros-de-texto-Bucaramanga-2026.pdf",
+        "fuenteNombre": "Circular 004 de 2026, Comfenalco Santander"
+      },
+      "costoPendiente": "Ejemplo: paquete de primaria de un colegio de Bucaramanga en 2026. Usa el valor de tu colegio.",
+      "etiquetaPorcentaje": "Parte de los textos que reemplaza la plataforma",
+      "porcentajePorDefecto": 50,
+      "resultadoTitulo": "Ahorro estimado para las familias en un año",
+      "resultadoVacio": "Escribe el costo por estudiante para ver el ahorro.",
+      "porEstudiante": "por estudiante",
+      "notaHonesta": "Es una estimación con tus propios valores. Vanessa reduce o reemplaza textos según lo que decida el colegio. Para un cálculo completo, réstale el valor de la cotización."
+    },
+    "maleta": {
+      "titulo": "La maleta se aligera",
+      "texto": "Mueve la barra de la calculadora y mira cómo salen los libros de la maleta.",
+      "pesoActual": {
+        "valor": "",
+        "unidad": "",
+        "fuente": "https://www.eluniversal.com.co/especial/salud/2025/02/04/cuidado-los-morrales-escolares-pueden-afectar-la-salud-de-los-estudiantes/",
+        "fuenteNombre": "El Universal, febrero de 2025"
+      },
+      "etiquetaPeso": "Libros en la maleta",
+      "pendiente": "Un estudio de la Universidad CES reportado en 2025 encontró que la mitad de los estudiantes lleva más del 15 %."
+    },
+    "pregunta": {
+      "texto": "¿Sabe cuánto del libro alcanzó a ver cada curso?",
+      "respuesta": "En Vanessa el avance se ve: qué temas se terminaron y cuáles no, por curso y por estudiante."
+    },
+    "circular": {
+      "texto": "La Circular 002 de 2026 del Ministerio de Educación pide que los textos se mantengan al menos tres años, que no se impongan marcas ni proveedores y que la lista traiga un cronograma de uso.",
+      "fuente": "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/427017:Orientaciones-para-las-familias-sobre-utiles-uniformes-y-textos-escolares-en-2026",
+      "fuenteNombre": "MEN, Circular 002 del 8 de enero de 2026"
+    }
+  },
+  "recorrido": {
+    "etiqueta": "Un recorrido por rol",
+    "titulo": "Cada persona ve lo que necesita",
+    "texto": "Vanessa tiene cinco roles. Elige uno y Pardo te muestra su pantalla.",
+    "roles": [
+      {
+        "id": "estudiante",
+        "nombre": "Estudiante",
+        "pardo": "celebra",
+        "globo": "¡Así ve Valentina, de 6A, su progreso!",
+        "titulo": "Una interfaz pensada para niños",
+        "puntos": [
+          "Camino de temas con estrellas: Fracciones, Decimales, Proporciones…",
+          "«Mi progreso» con estrellas por asignatura y un calendario de huellas.",
+          "Lecciones con imágenes, videos, actividades y confeti al terminar.",
+          "Recordatorios de Pardo siempre en positivo, nunca con regaños.",
+          "Entra con su número de documento: no necesita correo."
+        ],
+        "captura": "capturas/rol-estudiante.png",
+        "alt": "«Mi progreso» de Valentina, de 6A: racha, avance y recordatorios de Pardo"
+      },
+      {
+        "id": "profesor",
+        "nombre": "Profesor",
+        "pardo": "lee",
+        "globo": "El profe Andrés arma su curso una vez y lo publica a sus grupos.",
+        "titulo": "Arma, evalúa y califica en un solo lugar",
+        "puntos": [
+          "Constructor de cursos: curso → temas → lecciones, con 14 tipos de bloque.",
+          "Banco de preguntas compartido por asignatura, con su % de acierto.",
+          "Quiz y exámenes con tiempo, intentos y guardado automático.",
+          "Preguntas abiertas con bandeja «Por calificar», por estudiante o por pregunta.",
+          "Estadísticas de sus grupos: avance, notas y preguntas más falladas."
+        ],
+        "captura": "capturas/rol-profesor.png",
+        "alt": "Constructor del curso Fracciones y decimales del profesor Andrés"
+      },
+      {
+        "id": "coordinacion",
+        "nombre": "Coordinación y rectoría",
+        "pardo": "piensa",
+        "globo": "Coordinación ve todo el colegio de un vistazo.",
+        "titulo": "La foto completa del colegio, en vivo",
+        "puntos": [
+          "Estructura académica: año lectivo, períodos, grados, grupos y carga académica.",
+          "Matrícula desde Excel, con las credenciales listas para entregar.",
+          "Comparativos por grado, grupo, asignatura y profesor.",
+          "Simulacros Saber en el tiempo y alerta temprana con seguimiento.",
+          "Avisos al colegio, a un grado o a un grupo."
+        ],
+        "captura": "capturas/rol-coordinacion.png",
+        "alt": "Alerta temprana con las alertas abiertas del colegio"
+      },
+      {
+        "id": "acudiente",
+        "nombre": "Acudiente",
+        "pardo": "saluda",
+        "globo": "Claudia sabe cómo va Samuel sin esperar a la entrega de notas.",
+        "titulo": "«Mis hijos»: la semana, día por día",
+        "puntos": [
+          "Qué estudió cada día: tiempo, lecciones y evaluaciones.",
+          "Notas con los temas a repasar, sin mostrar preguntas ni respuestas.",
+          "Resultados de los simulacros Saber de su hijo, sin comparaciones.",
+          "«Para tener en cuenta»: avisos amables o «Todo va bien».",
+          "Resumen semanal por WhatsApp, solo si el acudiente lo autoriza."
+        ],
+        "captura": "capturas/rol-acudiente.png",
+        "alt": "«Mis hijos»: lo que hay que tener en cuenta de Samuel y sus días de estudio"
+      }
+    ],
+    "boton": "Quiero verlo con mi colegio"
+  },
+  "modulos": {
+    "etiqueta": "Módulos",
+    "titulo": "Todo lo que el colegio necesita, conectado",
+    "texto": "Comparten los mismos estudiantes, grupos y banco de preguntas. Toca una tarjeta para ver el detalle.",
+    "verDetalle": "Ver detalle",
+    "virtud": "Lo que hace",
+    "diferencia": "Lo que lo hace distinto",
+    "cerrar": "Cerrar",
+    "items": [
+      {
+        "id": "cursos",
+        "icono": "camino",
+        "color": "azul",
+        "nombre": "Cursos progresivos",
+        "virtud": "El contenido del año, por temas y lecciones.",
+        "diferencia": "Tres modos de avance: libre, en orden o por fechas, con fechas ajustables por grupo.",
+        "detalle": [
+          "Curso → temas → lecciones, con 14 tipos de bloque.",
+          "En orden: el tema siguiente se abre al aprobar el anterior.",
+          "Por fechas: cada tema se abre en su día.",
+          "Se publica a los grupos: los matriculados lo ven sin asignarlo uno por uno."
+        ]
+      },
+      {
+        "id": "evaluaciones",
+        "icono": "examen",
+        "color": "coral",
+        "nombre": "Evaluaciones y banco",
+        "virtud": "Evaluación por tema, quiz y exámenes con el banco del área.",
+        "diferencia": "Cada respuesta se guarda sola, el intento se retoma y al acabarse el tiempo se envía con lo respondido.",
+        "detalle": [
+          "5 tipos de pregunta automática y respuesta escrita.",
+          "Lecturas con varias preguntas, como en el Saber.",
+          "Tiempo, intentos, nota que cuenta y cuándo se ven las respuestas.",
+          "Resultados con desempeños, preguntas más falladas y Excel."
+        ]
+      },
+      {
+        "id": "escala",
+        "icono": "escala",
+        "color": "verde",
+        "nombre": "Escala SIEE",
+        "virtud": "Habla el idioma del Decreto 1290.",
+        "diferencia": "La escala del SIEE del colegio, con su equivalencia Superior, Alto, Básico y Bajo, ya viene incluida.",
+        "detalle": [
+          "Por defecto de 1.0 a 5.0 y aprueba con 3.0.",
+          "Desempeños configurables según el SIEE.",
+          "Todo se calcula en % y la base lo convierte a la escala."
+        ]
+      },
+      {
+        "id": "saber",
+        "icono": "saber",
+        "color": "morado",
+        "nombre": "Módulo Saber",
+        "virtud": "Simulacros Saber todo el año, sin pagar un preicfes por estudiante.",
+        "diferencia": "Secciones y sesiones como la prueba real, puntaje estimado de 0 a 500, niveles y competencias.",
+        "detalle": [
+          "Saber 5 (5°), Saber 9 (9°) y Saber 11 (10° y 11°).",
+          "Puntaje de 0 a 100 por prueba y global de 0 a 500 estimado.",
+          "Niveles de desempeño y % por competencia.",
+          "Percentiles en el colegio, solo para el personal.",
+          "Banco Saber con carga desde Excel."
+        ]
+      },
+      {
+        "id": "estadisticas",
+        "icono": "barras",
+        "color": "azul",
+        "nombre": "Estadísticas",
+        "virtud": "Tableros por rol calculados en vivo, con Excel.",
+        "diferencia": "Junto a cada indicador, «¿Cómo se calcula?»: nadie tiene que adivinar.",
+        "detalle": [
+          "Profesor: sus grupos, inactivos y preguntas más falladas.",
+          "Coordinación: comparativos por grado, grupo, asignatura y profesor.",
+          "Simulacros en el tiempo y uso de la plataforma de 12 semanas."
+        ]
+      },
+      {
+        "id": "alerta",
+        "icono": "alerta",
+        "color": "coral",
+        "nombre": "Alerta temprana",
+        "virtud": "Alertas antes de que sea tarde.",
+        "diferencia": "Cuatro señales con seguimiento: Nueva → En seguimiento → Cerrada, con notas internas.",
+        "detalle": [
+          "Días sin entrar, atraso en un curso, notas bajas y simulacro.",
+          "Umbrales configurables por el colegio.",
+          "El profesor ve sus grupos; el director, su grupo; coordinación, todo.",
+          "El acudiente la ve en tono amable, sin notas internas.",
+          "No reemplaza a SIMPADE: es la herramienta del día a día dentro del colegio."
+        ]
+      },
+      {
+        "id": "acudiente",
+        "icono": "familia",
+        "color": "amarillo",
+        "nombre": "Portal del acudiente",
+        "virtud": "Familias informadas a tiempo, no al final del período.",
+        "diferencia": "Muestra los temas a repasar, nunca las preguntas ni las respuestas.",
+        "detalle": [
+          "Tiempo, lecciones y evaluaciones de cada día.",
+          "Cursos con su avance y sus fechas.",
+          "Simulacros sin puestos ni percentiles.",
+          "Un acudiente con varios hijos los ve juntos."
+        ]
+      },
+      {
+        "id": "avisos",
+        "icono": "mensaje",
+        "color": "verde",
+        "nombre": "Avisos y WhatsApp",
+        "virtud": "Avisos al colegio, a un grado o a un grupo, y resumen semanal.",
+        "diferencia": "El acudiente autoriza en la plataforma (Ley 1581) y puede retirarlo cuando quiera.",
+        "detalle": [
+          "Resumen semanal al acudiente, por defecto el viernes a las 5:00 p. m.",
+          "Recordatorios al estudiante de lo que cierra mañana.",
+          "Cola con pausa, límite por hora y horario permitido.",
+          "Vista previa: cuántos lo verán y cuántos lo recibirán."
+        ]
+      },
+      {
+        "id": "notas",
+        "icono": "hojas",
+        "color": "verde",
+        "nombre": "Notas por período en Excel",
+        "virtud": "Un Excel por grupo y período con la nota por asignatura.",
+        "diferencia": "El colegio sigue con su boletín: Vanessa le entrega el insumo listo.",
+        "detalle": [
+          "Hoja «Notas»: estudiantes en filas y asignaturas en columnas.",
+          "Hoja «Detalle» con %, desempeño y número de evaluaciones.",
+          "Hoja «Cómo se calcula»."
+        ]
+      },
+      {
+        "id": "matricula",
+        "icono": "usuarios",
+        "color": "azul",
+        "nombre": "Matrícula y promoción",
+        "virtud": "Todo el colegio cargado desde el Excel que ya tiene.",
+        "diferencia": "Se valida fila por fila y no se guarda nada mientras haya errores.",
+        "detalle": [
+          "Plantilla con estudiantes, grupos y acudientes.",
+          "Credenciales listas en un Excel al confirmar.",
+          "Promoción al año siguiente en un paso."
+        ]
+      },
+      {
+        "id": "certificados",
+        "icono": "diploma",
+        "color": "amarillo",
+        "nombre": "Certificados y encuestas",
+        "virtud": "Certificado al terminar un curso y encuesta de satisfacción.",
+        "diferencia": "Cada certificado tiene un código y un QR que cualquiera puede verificar.",
+        "detalle": [
+          "Se encienden o apagan desde Configuración.",
+          "Descarga en PDF.",
+          "Resultados de la encuesta en los reportes del curso."
+        ]
+      }
+    ],
+    "cta": "¿Quieres verlos funcionando con los grados de tu colegio?",
+    "boton": "Agenda una demostración"
+  },
+  "demos": {
+    "etiqueta": "Pruébalo aquí",
+    "titulo": "Cuatro momentos de Vanessa",
+    "texto": "Son recreaciones con datos de ejemplo para que veas cómo se siente.",
+    "pregunta": {
+      "titulo": "El estudiante responde",
+      "contexto": "Matemáticas 6A · Tema: Fracciones",
+      "enunciado": "Sofía comió 1/4 de la pizza y Tomás 2/4. ¿Qué parte de la pizza comieron entre los dos?",
+      "opciones": [
+        "2/8",
+        "3/4",
+        "3/8",
+        "1/2"
+      ],
+      "correcta": 1,
+      "bien": "¡Muy bien! 1/4 + 2/4 = 3/4. ¡Ganaste una estrella!",
+      "mal": "¡Casi! Fíjate que las dos fracciones tienen el mismo denominador. Intenta otra vez.",
+      "inicio": "Toca una respuesta. ¡Yo te ayudo!",
+      "otraVez": "Otra vez"
+    },
+    "tablero": {
+      "titulo": "El tablero se llena solo",
+      "subtitulo": "Avance del curso de Lectura crítica por grupo",
+      "barras": [
+        {
+          "grupo": "10A",
+          "valor": 82
+        },
+        {
+          "grupo": "10B",
+          "valor": 64
+        },
+        {
+          "grupo": "11A",
+          "valor": 91
+        },
+        {
+          "grupo": "11B",
+          "valor": 47
+        }
+      ],
+      "nota": "Datos de ejemplo",
+      "aviso": "11B va atrasado: coordinación lo ve a tiempo."
+    },
+    "alerta": {
+      "titulo": "Una alerta con seguimiento",
+      "estudiante": "Tomás Rueda · 7B",
+      "motivo": "6 días sin entrar a la plataforma",
+      "estados": [
+        "Nueva",
+        "En seguimiento",
+        "Cerrada"
+      ],
+      "acciones": [
+        "Tomar seguimiento",
+        "Cerrar alerta",
+        "Ver de nuevo"
+      ],
+      "notas": [
+        "",
+        "Director de grupo: llamé a la mamá, Tomás estuvo enfermo.",
+        "Tomás volvió a entrar y se puso al día en Ciencias naturales."
+      ]
+    },
+    "whatsapp": {
+      "titulo": "El acudiente recibe su resumen",
+      "contacto": "Colegio San Pedro",
+      "estadoContacto": "en línea",
+      "hora": "5:00 p. m.",
+      "mensaje": "Hola, Marta. Así le fue a Sofía esta semana en Vanessa: estudió 2 h 15 min en 4 días, terminó el tema Fracciones y sacó 4.5 en el quiz de Lectura crítica. La otra semana cierra el examen de Ciencias naturales. ¡Que tengan un buen fin de semana!",
+      "otraVez": "Ver de nuevo",
+      "nota": "Solo llega si el acudiente lo autoriza en la plataforma.",
+      "escribiendo": "escribiendo…"
+    }
+  },
+  "video": {
+    "etiqueta": "En video",
+    "titulo": "Pardo te presenta Vanessa",
+    "videos": [
+      {
+        "nombre": "Pardo te la presenta",
+        "archivo": "capturas/pardo-presenta.mp4",
+        "poster": "capturas/pardo-presenta-poster.jpg",
+        "archivoVertical": "capturas/pardo-presenta-vertical.mp4",
+        "posterVertical": "capturas/pardo-presenta-vertical-poster.jpg",
+        "descripcion": "Video animado: Pardo presenta Vanessa, la plataforma escolar"
+      },
+      {
+        "nombre": "Recorrido por la plataforma",
+        "archivo": "capturas/recorrido.mp4",
+        "poster": "capturas/recorrido-poster.jpg",
+        "descripcion": "Video del recorrido por la plataforma"
+      }
+    ]
+  },
+  "comparativa": {
+    "etiqueta": "Comparativa",
+    "titulo": "¿Por qué Vanessa y no lo de siempre?",
+    "texto": "Muchos colegios combinan varias herramientas. Vanessa las reúne pensando en el colegio colombiano.",
+    "caracteristica": "Qué necesita el colegio",
+    "columnas": [
+      "Vanessa",
+      "Aula virtual genérica",
+      "Plataforma de gestión académica",
+      "Texto + plataforma editorial"
+    ],
+    "leyenda": {
+      "si": "Sí",
+      "parcial": "Parcial",
+      "no": "No",
+      "variable": "Depende del proveedor"
+    },
+    "nota": "Comparación por tipo de herramienta, no por marca, con información pública a octubre de 2026. «Depende del proveedor» significa que algunas lo traen y otras no. Muchos colegios usan Vanessa junto a su plataforma de notas.",
+    "filas": [
+      {
+        "caracteristica": "Cursos por grado del sistema colombiano",
+        "valores": [
+          "si",
+          "no",
+          "parcial",
+          "si"
+        ]
+      },
+      {
+        "caracteristica": "Contenido propio del colegio, sin pago por estudiante cada año",
+        "valores": [
+          "si",
+          "si",
+          "no",
+          "no"
+        ]
+      },
+      {
+        "caracteristica": "Escala SIEE y desempeños del Decreto 1290",
+        "valores": [
+          "si",
+          "no",
+          "si",
+          "variable"
+        ]
+      },
+      {
+        "caracteristica": "Simulacros Saber 5, 9 y 11 con puntaje estimado",
+        "valores": [
+          "si",
+          "no",
+          "variable",
+          "variable"
+        ]
+      },
+      {
+        "caracteristica": "Portal del acudiente con la semana del hijo",
+        "valores": [
+          "si",
+          "parcial",
+          "parcial",
+          "variable"
+        ]
+      },
+      {
+        "caracteristica": "Alerta temprana con seguimiento",
+        "valores": [
+          "si",
+          "no",
+          "variable",
+          "variable"
+        ]
+      },
+      {
+        "caracteristica": "Avisos y resumen semanal por WhatsApp",
+        "valores": [
+          "si",
+          "no",
+          "variable",
+          "variable"
+        ]
+      },
+      {
+        "caracteristica": "Interfaz para niños, con mascota",
+        "valores": [
+          "si",
+          "no",
+          "no",
+          "parcial"
+        ]
+      },
+      {
+        "caracteristica": "Banco de preguntas compartido por área",
+        "valores": [
+          "si",
+          "parcial",
+          "variable",
+          "parcial"
+        ]
+      },
+      {
+        "caracteristica": "Instalación propia del colegio con sus datos",
+        "valores": [
+          "si",
+          "parcial",
+          "no",
+          "no"
+        ]
+      }
+    ],
+    "deslizar": "Desliza la tabla hacia el lado para ver todas las columnas."
+  },
+  "seguridad": {
+    "etiqueta": "Seguridad y datos",
+    "titulo": "Los datos de los niños, bien cuidados",
+    "texto": "La mayoría de los usuarios son menores de edad, y eso se tuvo en cuenta desde el diseño.",
+    "items": [
+      {
+        "icono": "casa",
+        "titulo": "Sus datos, en su propia instalación",
+        "texto": "Cada colegio tiene su propia instalación y sus propias bases de datos. La información no se mezcla con la de otro colegio."
+      },
+      {
+        "icono": "llave",
+        "titulo": "Los datos son del colegio",
+        "texto": "El colegio consulta, corrige y descarga su información en Excel cuando la necesite."
+      },
+      {
+        "icono": "escudo",
+        "titulo": "Ley 1581 de 2012",
+        "texto": "La ley pide respetar los derechos prevalentes de los niños. El acudiente autoriza en la plataforma los mensajes por WhatsApp, puede retirarlo cuando quiera y queda la historia como prueba.",
+        "fuente": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981",
+        "fuenteNombre": "Ley 1581 de 2012, art. 7"
+      },
+      {
+        "icono": "usuarios",
+        "titulo": "Roles y permisos",
+        "texto": "Cinco roles. Cada acción se valida en el servidor, no solo en la pantalla. Los acudientes los vincula solo rectoría o coordinación, y los percentiles y las notas internas solo los ve el personal."
+      },
+      {
+        "icono": "candado",
+        "titulo": "Contraseñas cifradas",
+        "texto": "Las contraseñas se guardan cifradas y la sesión se cierra sola cuando vence."
+      },
+      {
+        "icono": "nube",
+        "titulo": "Respaldos",
+        "texto": "Respaldo diario de las bases de datos, para que nada se pierda."
+      }
+    ]
+  },
+  "empezamos": {
+    "etiqueta": "Cómo empezamos",
+    "titulo": "De la demostración al primer curso",
+    "texto": "No hay que empezar de cero: se parte del Excel que el colegio ya tiene.",
+    "pasos": [
+      {
+        "titulo": "Demostración",
+        "texto": "Te mostramos Vanessa en vivo con ejemplos de tus grados y resolvemos las dudas del equipo directivo."
+      },
+      {
+        "titulo": "Carga por Excel",
+        "texto": "Grupos, estudiantes y acudientes desde la plantilla. Las credenciales salen listas para entregar."
+      },
+      {
+        "titulo": "Capacitación",
+        "texto": "Sesiones para profesores y coordinación, con guías dentro de cada pantalla."
+      },
+      {
+        "titulo": "Primer curso en un día",
+        "texto": "Cada profesor arma y publica su primer curso acompañado, en una jornada."
+      },
+      {
+        "titulo": "Acompañamiento",
+        "texto": "Seguimos con el colegio durante el año para ajustar lo que haga falta."
+      }
+    ]
+  },
+  "asesoria": {
+    "etiqueta": "Asesoría",
+    "titulo": "Habla con un asesor",
+    "texto": "Te resolvemos las dudas, te mostramos Vanessa y te ayudamos a planear cómo empezar en tu colegio.",
+    "correosTitulo": "Por correo",
+    "telefonosTitulo": "Por teléfono o WhatsApp",
+    "llamar": "Llamar",
+    "whatsapp": "WhatsApp",
+    "asuntoCorreo": "Asesoría sobre Vanessa",
+    "mensajeWhatsapp": "Hola, quiero asesoría sobre Vanessa para mi colegio.",
+    "correos": ["asesordk.vanessa.s3m@gmail.com", "asesor.jv.vanessa.s3m@gmail.com"],
+    "telefonos": [
+      { "numero": "573052295353", "texto": "305 229 5353" },
+      { "numero": "573134788263", "texto": "313 478 8263" }
+    ]
+  },
+  "faq": {
+    "etiqueta": "Preguntas frecuentes",
+    "titulo": "Lo que suelen preguntar los rectores",
+    "items": [
+      {
+        "pregunta": "¿Y los estudiantes que no tienen internet en la casa?",
+        "respuesta": "Es una preocupación real: según el DANE, 65,6 % de los hogares tenía internet en 2024, y en zonas rurales solo 41,9 %. Por eso Vanessa funciona en el celular y en cualquier navegador: el estudiante puede trabajar en la sala de sistemas del colegio y el acudiente consulta desde su teléfono (79,3 % de los colombianos de 5 años o más usa internet). El avance y el material se ven cuando hay conexión, y cada respuesta de una evaluación se guarda sola. La plataforma convive con el cuaderno; no lo reemplaza de un día para otro.",
+        "fuentes": [
+          {
+            "nombre": "DANE, Encuesta de Calidad de Vida 2024",
+            "url": "https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2024.pdf"
+          }
+        ]
+      },
+      {
+        "pregunta": "¿No es muy caro?",
+        "respuesta": "La cotización depende del tamaño del colegio y de los módulos que active. Como referencia de lo que ya se paga: un paquete de textos de primaria de $976.300 por estudiante (ejemplo de un colegio de Bucaramanga, 2026) o un preicfes presencial de $700.000 (ejemplo de un colegio de Barranquilla, 2026). El contenido que crean los docentes en Vanessa no se vuelve a pagar cada año. Se puede empezar con un piloto por grado.",
+        "fuentes": [
+          {
+            "nombre": "Comfenalco Santander, Circular 004 de 2026",
+            "url": "https://www.comfenalcosantander.com.co/wp-content/uploads/2026/01/Circular-004-Libros-de-texto-Bucaramanga-2026.pdf"
+          },
+          {
+            "nombre": "Colegio Americano de Barranquilla, Circular C-02-26.1",
+            "url": "https://www.colegioamericano.edu.co/wp-content/uploads/2026/02/CIRCULAR-C-02-26-1-PREICFES.pdf"
+          }
+        ]
+      },
+      {
+        "pregunta": "Mis docentes no tienen tiempo para capacitarse",
+        "respuesta": "El banco de preguntas es compartido por área, así nadie empieza de cero. Cada pantalla trae su explicación en español y la capacitación es corta y por rol. La meta es que cada profesor publique su primer curso en una jornada acompañada. Se puede empezar por un área o un grado."
+      },
+      {
+        "pregunta": "Ya usamos un aula virtual. ¿Para qué cambiar?",
+        "respuesta": "No hay que dejarla: un aula virtual genérica es un buen tablero de tareas y puede seguir. Vanessa suma lo que esas herramientas no traen de fábrica: la escala SIEE del Decreto 1290, simulacros Saber con puntaje estimado, cursos por grado del sistema colombiano, alerta temprana y un portal del acudiente con la semana y las notas de su hijo."
+      },
+      {
+        "pregunta": "Ya tenemos plataforma de notas",
+        "respuesta": "Vanessa no busca reemplazar la matrícula, los pagos ni el boletín. Trabaja el aprendizaje del día a día: temas, evaluaciones, Saber y alertas. Las notas por período salen en Excel, por grupo, para cargarlas donde el colegio ya las tiene."
+      },
+      {
+        "pregunta": "¿Y la seguridad de los datos de los niños?",
+        "respuesta": "Cada colegio tiene su propia instalación y su propia base de datos, así que el colegio es el responsable de su información, como pide la Ley 1581. El acceso va por rol, los acudientes los vincula solo rectoría o coordinación y la autorización de WhatsApp la da el acudiente y queda registrada. Entregamos la política de tratamiento de datos para que el colegio la revise.",
+        "fuentes": [
+          {
+            "nombre": "Ley 1581 de 2012",
+            "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981"
+          }
+        ]
+      },
+      {
+        "pregunta": "¿Cada estudiante necesita un celular o un computador?",
+        "respuesta": "No. Funciona en el navegador de un computador, una tableta o un celular, así que se puede usar por turnos en la sala de sistemas. Los estudiantes entran con su número de documento, sin correo."
+      },
+      {
+        "pregunta": "¿Tenemos que dejar los libros?",
+        "respuesta": "No. El colegio decide: puede usar Vanessa junto con sus textos, reducirlos o reemplazarlos por el contenido de sus propios profesores."
+      }
+    ]
+  },
+  "cierre": {
+    "titulo": "¿Le mostramos Vanessa a tu colegio?",
+    "texto": "Una demostración en vivo, con ejemplos de tus grados y sin compromiso.",
+    "globo": "¡Te espero en la demostración!"
+  },
+  "pie": {
+    "texto": "Vanessa · Plataforma escolar para colegios colombianos",
+    "subtexto": "Con Pardo, un cachorro de leopardo inspirado en «Los Leopardos» de Bucaramanga.",
+    "arriba": "Volver arriba",
+    "marca": { "autor": "Esteban Janiot", "texto": "en colaboración con", "logo": "marcas/s3media.png", "alt": "S3Media" }
+  }
+}

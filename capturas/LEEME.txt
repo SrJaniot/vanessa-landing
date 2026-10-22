@@ -1,0 +1,22 @@
+CAPTURAS Y VIDEO DE LA LANDING DE VANESSA
+=========================================
+
+Mientras un archivo no exista, la landing muestra una pantalla recreada en HTML dentro del mismo marco.
+Para que se use la captura real:
+  1. Copiar el archivo a esta carpeta con el nombre exacto de la lista.
+  2. Agregar su nombre a "archivos" en capturas.json (sin la carpeta). Ejemplo:
+       { "archivos": ["portada-escritorio.png", "rol-estudiante.png"] }
+     Solo se piden al servidor los archivos de esa lista (asi no hay errores 404 en la consola).
+
+Archivos esperados (las rutas tambien estan en public/contenido/contenido.json):
+  portada-escritorio.png   Portada, dentro del portatil (16:10). Tablero de coordinacion.
+  portada-celular.png      Portada, dentro del celular (9:18,5). Camino de temas del estudiante.
+  rol-estudiante.png       Recorrido, pestaña Estudiante (16:11).
+  rol-profesor.png         Recorrido, pestaña Profesor (16:11).
+  rol-coordinacion.png     Recorrido, pestaña Coordinacion y rectoria (16:11).
+  rol-acudiente.png        Recorrido, pestaña Acudiente (16:11).
+  recorrido.mp4            Video del recorrido. La seccion de video aparece sola cuando esta en la lista.
+  recorrido-poster.jpg     Poster del video (16:9).
+
+Las imagenes se recortan desde arriba (object-fit: cover; object-position: top).
+Solo datos de prueba escolares: nada de otros proyectos ni datos reales de estudiantes.
