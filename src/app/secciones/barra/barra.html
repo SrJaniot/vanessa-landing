@@ -6,9 +6,9 @@
       <app-pardo [cara]="true" [tamano]="38" estado="saluda" />
       <span>{{ c.sitio.marca }}</span>
     </a>
-    <ul class="hidden lg:flex items-center gap-1 ml-6 list-none p-0 m-0">
+    <ul class="hidden xl:flex items-center gap-1 ml-6 list-none p-0 m-0">
       @for (e of c.nav.enlaces; track e.ancla) {
-        <li><a [href]="'#' + e.ancla" (click)="ir(e.ancla, $event)" class="px-3 py-2 rounded-xl font-bold text-[15px] text-grafito hover:text-sello hover:bg-sello-suave transition-colors">{{ e.texto }}</a></li>
+        <li><a [href]="'#' + e.ancla" (click)="ir(e.ancla, $event)" class="px-3 py-2 rounded-xl font-bold text-[15px] whitespace-nowrap text-grafito hover:text-sello hover:bg-sello-suave transition-colors">{{ e.texto }}</a></li>
       }
     </ul>
     <div class="ml-auto flex items-center gap-2">
@@ -17,14 +17,14 @@
         <app-icono [nombre]="tema.oscuro ? 'sol' : 'luna'" [tamano]="20" />
       </button>
       <button type="button" (click)="contacto.abrir()" class="btn-primary !min-h-[44px] !px-4 !text-[15px] hidden sm:inline-flex">{{ c.contacto.textoBoton }}</button>
-      <button type="button" (click)="menuAbierto.set(!menuAbierto())" class="lg:hidden w-11 h-11 grid place-items-center rounded-xl border-2 border-linea bg-hoja text-tinta cursor-pointer"
+      <button type="button" (click)="menuAbierto.set(!menuAbierto())" class="xl:hidden w-11 h-11 grid place-items-center rounded-xl border-2 border-linea bg-hoja text-tinta cursor-pointer"
         [attr.aria-expanded]="menuAbierto()" aria-controls="menu-movil" [attr.aria-label]="c.nav.menu">
         <app-icono [nombre]="menuAbierto() ? 'cerrar' : 'menu'" [tamano]="22" />
       </button>
     </div>
   </nav>
   @if (menuAbierto()) {
-    <div id="menu-movil" class="lg:hidden contenedor pb-4">
+    <div id="menu-movil" class="xl:hidden contenedor pb-4">
       <ul class="list-none p-0 m-0 grid gap-1">
         @for (e of c.nav.enlaces; track e.ancla) {
           <li><a [href]="'#' + e.ancla" (click)="ir(e.ancla, $event)" class="block px-3 py-3 rounded-xl font-bold text-[17px] text-tinta hover:bg-sello-suave">{{ e.texto }}</a></li>

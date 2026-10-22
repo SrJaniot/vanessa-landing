@@ -92,6 +92,12 @@ export interface Contenido {
   };
   seguridad: { etiqueta: string; titulo: string; texto: string; items: { icono: string; titulo: string; texto: string; fuente?: string; fuenteNombre?: string }[] };
   empezamos: { etiqueta: string; titulo: string; texto: string; pasos: { titulo: string; texto: string }[] };
+  asesoria: {
+    etiqueta: string; titulo: string; texto: string;
+    correosTitulo: string; telefonosTitulo: string; llamar: string; whatsapp: string;
+    asuntoCorreo: string; mensajeWhatsapp: string;
+    correos: string[]; telefonos: { numero: string; texto: string }[];
+  };
   faq: { etiqueta: string; titulo: string; items: { pregunta: string; respuesta: string; fuentes?: Fuente[] }[] };
   cierre: { titulo: string; texto: string; globo: string };
   pie: { texto: string; subtexto: string; arriba: string; marca?: { autor: string; texto: string; logo: string; alt: string } };

@@ -53,6 +53,10 @@
       {
         "texto": "Preguntas",
         "ancla": "preguntas"
+      },
+      {
+        "texto": "Asesoría",
+        "ancla": "asesoria"
       }
     ],
     "menu": "Menú",
@@ -107,6 +111,10 @@
       "preguntas": {
         "estado": "piensa",
         "texto": "¿Tienes una duda? Seguro está aquí."
+      },
+      "asesoria": {
+        "estado": "saluda",
+        "texto": "¿Hablamos? Un asesor te ayuda sin compromiso."
       },
       "cierre": {
         "estado": "celebra",
@@ -797,6 +805,22 @@
         "titulo": "Acompañamiento",
         "texto": "Seguimos con el colegio durante el año para ajustar lo que haga falta."
       }
+    ]
+  },
+  "asesoria": {
+    "etiqueta": "Asesoría",
+    "titulo": "Habla con un asesor",
+    "texto": "Te resolvemos las dudas, te mostramos Vanessa y te ayudamos a planear cómo empezar en tu colegio.",
+    "correosTitulo": "Por correo",
+    "telefonosTitulo": "Por teléfono o WhatsApp",
+    "llamar": "Llamar",
+    "whatsapp": "WhatsApp",
+    "asuntoCorreo": "Asesoría sobre Vanessa",
+    "mensajeWhatsapp": "Hola, quiero asesoría sobre Vanessa para mi colegio.",
+    "correos": ["asesordk.vanessa.s3m@gmail.com", "asesor.jv.vanessa.s3m@gmail.com"],
+    "telefonos": [
+      { "numero": "573052295353", "texto": "305 229 5353" },
+      { "numero": "573134788263", "texto": "313 478 8263" }
     ]
   },
   "faq": {

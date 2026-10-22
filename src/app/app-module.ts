@@ -18,6 +18,7 @@ import { Comparativa } from './secciones/comparativa/comparativa';
 import { Seguridad } from './secciones/seguridad/seguridad';
 import { Empezamos } from './secciones/empezamos/empezamos';
 import { Faq } from './secciones/faq/faq';
+import { Asesoria } from './secciones/asesoria/asesoria';
 import { Cierre } from './secciones/cierre/cierre';
 import { Guia } from './secciones/guia/guia';
 import { ContactoModal } from './secciones/contacto-modal/contacto-modal';
@@ -29,7 +30,7 @@ registerLocaleData(localeEsCo, 'es-CO');
 @NgModule({
   declarations: [
     App, Barra, Portada, Problema, Libros, Recorrido, Modulos, Demos, Video,
-    Comparativa, Seguridad, Empezamos, Faq, Cierre, Guia, ContactoModal,
+    Comparativa, Seguridad, Empezamos, Faq, Asesoria, Cierre, Guia, ContactoModal,
   ],
   imports: [
     BrowserModule,
